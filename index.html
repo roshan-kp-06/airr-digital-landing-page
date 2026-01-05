@@ -12,25 +12,26 @@
 
   <style>
     :root {
-      /* Anthropic Brand Colors - Light Theme */
-      --color-bg: #faf9f5;
-      --color-bg-elevated: #f5f4f0;
-      --color-bg-card: #ffffff;
-      --color-surface: #e8e6dc;
-      --color-border: rgba(20, 20, 19, 0.08);
-      --color-border-strong: rgba(20, 20, 19, 0.15);
-      --color-text: #141413;
-      --color-text-secondary: #4a4a47;
-      --color-text-muted: #807e76;
-      --color-accent: #d97757;
-      --color-accent-dim: rgba(217, 119, 87, 0.12);
-      --color-accent-glow: rgba(217, 119, 87, 0.3);
-      --color-teal: #5a8ab8;
-      --color-teal-dim: rgba(90, 138, 184, 0.12);
-      --color-coral: #6a7d4d;
-      --color-coral-dim: rgba(106, 125, 77, 0.12);
+      /* Airr Digital Brand Colors - Light Theme */
+      --color-bg: #FFFFFF;
+      --color-bg-elevated: #f8f8f9;
+      --color-bg-card: #FFFFFF;
+      --color-surface: #f0f0f1;
+      --color-border: rgba(10, 10, 10, 0.08);
+      --color-border-strong: rgba(10, 10, 10, 0.15);
+      --color-text: #0A0A0A;
+      --color-text-secondary: #000228;
+      --color-text-muted: #666666;
+      --color-accent: #4B76EC;
+      --color-accent-dim: rgba(75, 118, 236, 0.12);
+      --color-accent-glow: rgba(75, 118, 236, 0.3);
+      --color-accent-strong: #0D35CF;
+      --color-teal: #4B76EC;
+      --color-teal-dim: rgba(75, 118, 236, 0.12);
+      --color-coral: #4B76EC;
+      --color-coral-dim: rgba(75, 118, 236, 0.12);
 
-      /* Anthropic Brand Fonts */
+      /* Airr Digital Brand Fonts */
       --font-display: 'Poppins', Arial, sans-serif;
       --font-body: 'Lora', Georgia, serif;
       --container-max: 1180px;
@@ -145,8 +146,8 @@
       left: 40px;
       width: 120px;
       height: 120px;
-      border-left: 1px solid rgba(217, 119, 87, 0.25);
-      border-top: 1px solid rgba(217, 119, 87, 0.25);
+      border-left: 1px solid rgba(75, 118, 236, 0.25);
+      border-top: 1px solid rgba(75, 118, 236, 0.25);
       animation: cornerPulse 4s ease-in-out infinite;
     }
 
@@ -225,11 +226,11 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(20, 20, 19, 0.08);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06), 0 0 60px rgba(217, 119, 87, 0.03);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06), 0 0 60px rgba(75, 118, 236, 0.03);
     }
 
     .header.scrolled::before {
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08), 0 0 80px rgba(217, 119, 87, 0.05);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08), 0 0 80px rgba(75, 118, 236, 0.05);
     }
 
     .header .container {
@@ -399,22 +400,22 @@
       align-items: center;
       gap: 12px;
       padding: 14px 28px;
-      background: linear-gradient(135deg, rgba(217, 119, 87, 0.12) 0%, rgba(217, 119, 87, 0.04) 100%);
-      border: 1px solid rgba(217, 119, 87, 0.35);
+      background: linear-gradient(135deg, rgba(75, 118, 236, 0.12) 0%, rgba(75, 118, 236, 0.04) 100%);
+      border: 1px solid rgba(75, 118, 236, 0.35);
       border-radius: 100px;
       font-size: 0.9375rem;
       font-weight: 500;
       color: var(--color-text);
       margin-bottom: 32px;
       animation: fadeInUp 0.8s var(--ease-out-expo) both, badgeGlow 3s ease-in-out infinite;
-      box-shadow: 0 0 30px rgba(217, 119, 87, 0.12);
+      box-shadow: 0 0 30px rgba(75, 118, 236, 0.12);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
     }
 
     @keyframes badgeGlow {
-      0%, 100% { box-shadow: 0 0 30px rgba(217, 119, 87, 0.12); }
-      50% { box-shadow: 0 0 50px rgba(217, 119, 87, 0.2); }
+      0%, 100% { box-shadow: 0 0 30px rgba(75, 118, 236, 0.12); }
+      50% { box-shadow: 0 0 50px rgba(75, 118, 236, 0.2); }
     }
 
     .hero-badge-dot {
@@ -449,7 +450,7 @@
     .hero-title .accent {
       color: var(--color-accent);
       font-style: italic;
-      text-shadow: 0 0 60px rgba(217, 119, 87, 0.5);
+      text-shadow: 0 0 60px rgba(75, 118, 236, 0.5);
     }
 
     .hero-subtitle {
@@ -504,7 +505,7 @@
       width: 100%;
       height: 100%;
       cursor: pointer;
-      background: linear-gradient(135deg, #e8e6dc 0%, #d8d6cc 50%, #cbc9bf 100%);
+      background: linear-gradient(135deg, #f0f0f1 0%, #e8e8e9 50%, #e0e0e1 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -526,7 +527,7 @@
 
     .video-facade:hover .play-btn {
       transform: scale(1.08);
-      box-shadow: 0 0 0 20px rgba(217, 119, 87, 0.1), 0 0 60px var(--color-accent-glow);
+      box-shadow: 0 0 0 20px rgba(75, 118, 236, 0.1), 0 0 60px var(--color-accent-glow);
     }
 
     .play-btn {
@@ -537,7 +538,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 0 12px rgba(217, 119, 87, 0.15), 0 0 40px var(--color-accent-glow);
+      box-shadow: 0 0 0 12px rgba(75, 118, 236, 0.15), 0 0 40px var(--color-accent-glow);
       transition: all 0.4s var(--ease-out-expo);
       margin-bottom: 20px;
       position: relative;
@@ -704,7 +705,7 @@
       transform: translate(-50%, -50%);
       width: 800px;
       height: 600px;
-      background: radial-gradient(ellipse, rgba(217, 119, 87, 0.08) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(75, 118, 236, 0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -722,7 +723,7 @@
       letter-spacing: 0.12em;
       color: var(--color-accent);
       margin-bottom: 20px;
-      text-shadow: 0 0 30px rgba(217, 119, 87, 0.5);
+      text-shadow: 0 0 30px rgba(75, 118, 236, 0.5);
     }
 
     .section-label::before,
@@ -745,7 +746,7 @@
     .section-title .accent {
       color: var(--color-accent);
       font-style: italic;
-      text-shadow: 0 0 40px rgba(217, 119, 87, 0.4);
+      text-shadow: 0 0 40px rgba(75, 118, 236, 0.4);
     }
 
     .section-subtitle {
@@ -845,11 +846,11 @@
       background: #ffffff;
       padding: 40px 32px;
       border-radius: 20px;
-      border: 1px solid rgba(217, 119, 87, 0.2);
+      border: 1px solid rgba(75, 118, 236, 0.2);
       position: relative;
       overflow: hidden;
       transition: all 0.4s var(--ease-out-expo);
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 0 40px rgba(217, 119, 87, 0.08);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 0 40px rgba(75, 118, 236, 0.08);
       z-index: 10;
     }
 
@@ -867,7 +868,7 @@
 
     .solution-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(217, 119, 87, 0.4);
+      border-color: rgba(75, 118, 236, 0.4);
     }
 
     .solution-card:hover::before {
@@ -1047,7 +1048,7 @@
       width: 52px;
       height: 52px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-accent) 0%, #c4684a 100%);
+      background: linear-gradient(135deg, var(--color-accent) 0%, #0D35CF 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1698,7 +1699,7 @@
       <div class="cta-content reveal">
         <div class="cta-badge">
           <div class="cta-badge-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#d97757" stroke-width="2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4B76EC" stroke-width="2">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
               <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
