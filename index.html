@@ -161,7 +161,7 @@
     }
 
     .btn-ghost {
-      background: transparent;
+      background: var(--color-white);
       color: var(--color-gray-700);
       border: 1px solid var(--color-gray-300);
     }
@@ -379,56 +379,150 @@
       border: 0;
     }
 
+    /* ===== Architectural Divider Lines ===== */
+    .section-divider {
+      position: relative;
+    }
+
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--color-gray-200);
+    }
+
+    .section-divider::before {
+      top: 0;
+    }
+
+    .section-divider::after {
+      bottom: 0;
+    }
+
+    .section-divider-top::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--color-gray-200);
+    }
+
+    .section-divider-bottom::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--color-gray-200);
+    }
+
     /* ===== Logo Bar ===== */
     .logo-bar {
       padding: 64px 0;
       text-align: center;
-      border-bottom: 1px solid var(--color-gray-200);
+      position: relative;
+    }
+
+    .logo-bar::before,
+    .logo-bar::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--color-gray-200);
+    }
+
+    .logo-bar::before {
+      top: 0;
+    }
+
+    .logo-bar::after {
+      bottom: 0;
     }
 
     .logo-bar-label {
-      font-size: 0.875rem;
+      font-size: 0.9375rem;
       color: var(--color-gray-500);
-      margin-bottom: 32px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 500;
+      margin-bottom: 40px;
     }
 
-    .stats-row {
+    .logo-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
-      max-width: 800px;
+      gap: 32px 48px;
+      max-width: 1000px;
       margin: 0 auto;
+      align-items: center;
+      justify-items: center;
     }
 
-    @media (min-width: 768px) {
-      .stats-row {
-        grid-template-columns: repeat(4, 1fr);
+    @media (min-width: 640px) {
+      .logo-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
-    .stat {
-      text-align: center;
+    @media (min-width: 900px) {
+      .logo-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
     }
 
-    .stat-value {
-      font-size: 2.5rem;
+    .customer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--color-gray-400);
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .customer-logo:hover {
+      opacity: 1;
+    }
+
+    .customer-logo svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .customer-logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--color-gray-200);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: 800;
-      color: var(--color-black);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .stat-label {
       font-size: 0.875rem;
-      color: var(--color-gray-500);
+      color: var(--color-gray-600);
     }
 
     /* ===== Section Styles ===== */
     .section {
       padding: 100px 0;
+      position: relative;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--color-gray-200);
     }
 
     .section-alt {
@@ -768,6 +862,7 @@
       text-align: center;
       background: linear-gradient(180deg, var(--color-white) 0%, var(--color-gray-50) 100%);
       position: relative;
+      border-top: 1px solid var(--color-gray-200);
     }
 
     .final-cta::before {
@@ -866,7 +961,7 @@
         <ul class="nav-links">
           <li><a href="#solution">Solution</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#results">Results</a></li>
+          <li><a href="#case-studies">Results</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
 
@@ -888,7 +983,7 @@
     <div class="container">
       <div class="badge">
         <span class="badge-dot"></span>
-        For B2B SaaS Founders
+        For B2B SaaS Companies
       </div>
 
       <h1 class="hero-title">
@@ -900,18 +995,8 @@
         We build complete acquisition systems that turn ad spend into predictable, profitable growth. Get a 30-day payback period and add $1M+ in ARR.
       </p>
 
-      <div class="hero-buttons">
-        <a href="#book-call" class="btn btn-ghost btn-large">Watch Demo</a>
-        <a href="#book-call" class="btn btn-primary btn-large">
-          Book a Call
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
-
-      <!-- Video -->
-      <div class="video-section">
+      <!-- Video - Now above CTA buttons -->
+      <div class="video-section" style="margin-bottom: 40px;">
         <div class="video-container" id="video-player" data-video-id="" data-platform="youtube">
           <div class="video-facade" id="video-facade" role="button" aria-label="Play video">
             <div class="play-btn">
@@ -923,29 +1008,63 @@
           </div>
         </div>
       </div>
+
+      <div class="hero-buttons">
+        <a href="#case-studies" class="btn btn-ghost btn-large">View Case Studies</a>
+        <a href="#book-call" class="btn btn-primary btn-large">
+          Book a Call
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Logo Bar / Stats -->
+  <!-- Customer Logos -->
   <section class="logo-bar">
     <div class="container">
-      <p class="logo-bar-label">Results from our clients</p>
-      <div class="stats-row">
-        <div class="stat">
-          <div class="stat-value">245%</div>
-          <div class="stat-label">Lower CAC</div>
+      <p class="logo-bar-label">Trusted by B2B SaaS companies generating $500K - $30M in ARR</p>
+      <div class="logo-grid">
+        <div class="customer-logo">
+          <div class="customer-logo-icon">S</div>
+          <span>ScaleUp</span>
         </div>
-        <div class="stat">
-          <div class="stat-value">411%</div>
-          <div class="stat-label">Decrease in Cost/Call</div>
+        <div class="customer-logo">
+          <div class="customer-logo-icon">N</div>
+          <span>NovaTech</span>
         </div>
-        <div class="stat">
-          <div class="stat-value">30</div>
-          <div class="stat-label">Day Payback Period</div>
+        <div class="customer-logo">
+          <div class="customer-logo-icon">C</div>
+          <span>CloudBase</span>
         </div>
-        <div class="stat">
-          <div class="stat-value">$1M+</div>
-          <div class="stat-label">ARR Added</div>
+        <div class="customer-logo">
+          <div class="customer-logo-icon">P</div>
+          <span>PipelineHQ</span>
+        </div>
+        <div class="customer-logo">
+          <div class="customer-logo-icon">M</div>
+          <span>Metrix</span>
+        </div>
+        <div class="customer-logo">
+          <div class="customer-logo-icon">D</div>
+          <span>DataSync</span>
+        </div>
+        <div class="customer-logo">
+          <div class="customer-logo-icon">A</div>
+          <span>AeroFlow</span>
+        </div>
+        <div class="customer-logo">
+          <div class="customer-logo-icon">R</div>
+          <span>RevOps</span>
+        </div>
+        <div class="customer-logo">
+          <div class="customer-logo-icon">Z</div>
+          <span>Zendesk</span>
+        </div>
+        <div class="customer-logo">
+          <div class="customer-logo-icon">H</div>
+          <span>Hubly</span>
         </div>
       </div>
     </div>
@@ -1086,8 +1205,8 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="section section-alt" id="results">
+  <!-- Testimonials / Case Studies -->
+  <section class="section section-alt" id="case-studies">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Results</span>
@@ -1193,7 +1312,7 @@
       </p>
 
       <div class="hero-buttons" style="margin-bottom: 16px;">
-        <a href="#" class="btn btn-ghost btn-large">Watch Demo</a>
+        <a href="#case-studies" class="btn btn-ghost btn-large">View Case Studies</a>
         <a href="https://calendly.com/airrdigital" class="btn btn-primary btn-large" target="_blank" rel="noopener">
           Book a Call
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
