@@ -60,7 +60,9 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Noise texture overlay */
+    /* ===== Global Background System ===== */
+
+    /* Architectural grid overlay */
     body::before {
       content: '';
       position: fixed;
@@ -68,37 +70,239 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-      opacity: 0.03;
+      background-image:
+        linear-gradient(rgba(176, 174, 165, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(176, 174, 165, 0.03) 1px, transparent 1px);
+      background-size: 80px 80px;
       pointer-events: none;
-      z-index: 1000;
+      z-index: 1;
     }
 
-    /* Gradient orbs */
+    /* Subtle noise texture */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.02;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Background canvas for structural elements */
+    .bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    /* Animated diagonal lines */
+    .bg-line {
+      position: absolute;
+      background: linear-gradient(90deg, transparent, rgba(176, 174, 165, 0.06), transparent);
+      transform-origin: center;
+    }
+
+    .bg-line-1 {
+      width: 1px;
+      height: 200vh;
+      top: -50vh;
+      left: 15%;
+      transform: rotate(15deg);
+      animation: lineFloat 20s ease-in-out infinite;
+    }
+
+    .bg-line-2 {
+      width: 1px;
+      height: 200vh;
+      top: -50vh;
+      left: 35%;
+      transform: rotate(-10deg);
+      animation: lineFloat 25s ease-in-out infinite reverse;
+    }
+
+    .bg-line-3 {
+      width: 1px;
+      height: 200vh;
+      top: -50vh;
+      right: 25%;
+      transform: rotate(8deg);
+      animation: lineFloat 22s ease-in-out infinite;
+      animation-delay: -5s;
+    }
+
+    .bg-line-4 {
+      width: 1px;
+      height: 200vh;
+      top: -50vh;
+      right: 10%;
+      transform: rotate(-12deg);
+      animation: lineFloat 28s ease-in-out infinite reverse;
+      animation-delay: -10s;
+    }
+
+    @keyframes lineFloat {
+      0%, 100% { transform: rotate(15deg) translateX(0); opacity: 0.4; }
+      50% { transform: rotate(15deg) translateX(20px); opacity: 0.8; }
+    }
+
+    /* Floating geometric shapes */
+    .bg-shape {
+      position: absolute;
+      border: 1px solid rgba(176, 174, 165, 0.08);
+      pointer-events: none;
+    }
+
+    .bg-shape-1 {
+      width: 300px;
+      height: 300px;
+      top: 10%;
+      right: 5%;
+      border-radius: 50%;
+      animation: shapeFloat 30s ease-in-out infinite;
+    }
+
+    .bg-shape-2 {
+      width: 200px;
+      height: 200px;
+      top: 40%;
+      left: 3%;
+      transform: rotate(45deg);
+      animation: shapeFloat 25s ease-in-out infinite reverse;
+      animation-delay: -8s;
+    }
+
+    .bg-shape-3 {
+      width: 150px;
+      height: 150px;
+      bottom: 20%;
+      right: 15%;
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      animation: shapeFloat 35s ease-in-out infinite;
+      animation-delay: -15s;
+    }
+
+    .bg-shape-4 {
+      width: 100px;
+      height: 100px;
+      top: 60%;
+      left: 10%;
+      border-radius: 50%;
+      animation: shapeFloat 20s ease-in-out infinite;
+      animation-delay: -3s;
+    }
+
+    @keyframes shapeFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+      25% { transform: translateY(-30px) rotate(5deg); opacity: 0.6; }
+      50% { transform: translateY(-10px) rotate(-3deg); opacity: 0.4; }
+      75% { transform: translateY(-40px) rotate(2deg); opacity: 0.5; }
+    }
+
+    /* Corner accent lines */
+    .bg-corner {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .bg-corner-tl {
+      top: 80px;
+      left: 40px;
+      width: 120px;
+      height: 120px;
+      border-left: 1px solid rgba(217, 119, 87, 0.15);
+      border-top: 1px solid rgba(217, 119, 87, 0.15);
+      animation: cornerPulse 4s ease-in-out infinite;
+    }
+
+    .bg-corner-br {
+      bottom: 40px;
+      right: 40px;
+      width: 120px;
+      height: 120px;
+      border-right: 1px solid rgba(106, 155, 204, 0.15);
+      border-bottom: 1px solid rgba(106, 155, 204, 0.15);
+      animation: cornerPulse 4s ease-in-out infinite;
+      animation-delay: -2s;
+    }
+
+    @keyframes cornerPulse {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
+    }
+
+    /* Floating dots */
+    .bg-dot {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(176, 174, 165, 0.2);
+      border-radius: 50%;
+      animation: dotPulse 3s ease-in-out infinite;
+    }
+
+    .bg-dot-1 { top: 20%; left: 20%; animation-delay: 0s; }
+    .bg-dot-2 { top: 35%; right: 30%; animation-delay: -0.5s; }
+    .bg-dot-3 { top: 55%; left: 8%; animation-delay: -1s; }
+    .bg-dot-4 { top: 70%; right: 12%; animation-delay: -1.5s; }
+    .bg-dot-5 { top: 85%; left: 35%; animation-delay: -2s; }
+    .bg-dot-6 { top: 15%; right: 15%; animation-delay: -2.5s; }
+
+    @keyframes dotPulse {
+      0%, 100% { transform: scale(1); opacity: 0.2; }
+      50% { transform: scale(1.5); opacity: 0.5; }
+    }
+
+    /* Gradient orbs - enhanced */
     .gradient-orb {
       position: absolute;
       border-radius: 50%;
       filter: blur(120px);
-      opacity: 0.4;
       pointer-events: none;
+      animation: orbFloat 20s ease-in-out infinite;
     }
 
     .gradient-orb-1 {
-      width: 600px;
-      height: 600px;
+      width: 500px;
+      height: 500px;
       background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
-      top: -200px;
-      right: -200px;
-      opacity: 0.15;
+      top: -150px;
+      right: -150px;
+      opacity: 0.08;
     }
 
     .gradient-orb-2 {
       width: 400px;
       height: 400px;
       background: radial-gradient(circle, var(--color-teal) 0%, transparent 70%);
-      bottom: 20%;
-      left: -100px;
-      opacity: 0.1;
+      bottom: 30%;
+      left: -150px;
+      opacity: 0.06;
+      animation-delay: -10s;
+    }
+
+    .gradient-orb-3 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, var(--color-coral) 0%, transparent 70%);
+      top: 50%;
+      right: -100px;
+      opacity: 0.05;
+      animation-delay: -5s;
+    }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -20px) scale(1.05); }
+      66% { transform: translate(-20px, 30px) scale(0.95); }
     }
 
     img { max-width: 100%; height: auto; display: block; }
@@ -322,24 +526,33 @@
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 10px 20px;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
+      gap: 12px;
+      padding: 14px 28px;
+      background: linear-gradient(135deg, rgba(217, 119, 87, 0.15) 0%, rgba(217, 119, 87, 0.05) 100%);
+      border: 1px solid rgba(217, 119, 87, 0.3);
       border-radius: 100px;
-      font-size: 0.875rem;
-      color: var(--color-text-secondary);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--color-text);
       margin-bottom: 32px;
-      animation: fadeInUp 0.8s var(--ease-out-expo) both;
+      animation: fadeInUp 0.8s var(--ease-out-expo) both, badgeGlow 3s ease-in-out infinite;
+      box-shadow: 0 0 30px rgba(217, 119, 87, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    @keyframes badgeGlow {
+      0%, 100% { box-shadow: 0 0 30px rgba(217, 119, 87, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1); }
+      50% { box-shadow: 0 0 50px rgba(217, 119, 87, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15); }
     }
 
     .hero-badge-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--color-teal);
+      width: 10px;
+      height: 10px;
+      background: var(--color-accent);
       border-radius: 50%;
       animation: pulse 2s infinite;
-      box-shadow: 0 0 12px var(--color-teal);
+      box-shadow: 0 0 16px var(--color-accent);
     }
 
     @keyframes pulse {
@@ -580,7 +793,7 @@
     }
 
     .section-dark {
-      background: var(--color-bg-elevated);
+      background: transparent;
     }
 
     .section-header {
@@ -1106,6 +1319,33 @@
 </head>
 <body>
 
+  <!-- Background Canvas -->
+  <div class="bg-canvas">
+    <!-- Diagonal lines -->
+    <div class="bg-line bg-line-1"></div>
+    <div class="bg-line bg-line-2"></div>
+    <div class="bg-line bg-line-3"></div>
+    <div class="bg-line bg-line-4"></div>
+
+    <!-- Geometric shapes -->
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+    <div class="bg-shape bg-shape-3"></div>
+    <div class="bg-shape bg-shape-4"></div>
+
+    <!-- Corner accents -->
+    <div class="bg-corner bg-corner-tl"></div>
+    <div class="bg-corner bg-corner-br"></div>
+
+    <!-- Floating dots -->
+    <div class="bg-dot bg-dot-1"></div>
+    <div class="bg-dot bg-dot-2"></div>
+    <div class="bg-dot bg-dot-3"></div>
+    <div class="bg-dot bg-dot-4"></div>
+    <div class="bg-dot bg-dot-5"></div>
+    <div class="bg-dot bg-dot-6"></div>
+  </div>
+
   <!-- Header -->
   <header class="header" id="header">
     <div class="container">
@@ -1139,6 +1379,7 @@
   <section class="hero">
     <div class="gradient-orb gradient-orb-1"></div>
     <div class="gradient-orb gradient-orb-2"></div>
+    <div class="gradient-orb gradient-orb-3"></div>
 
     <div class="container">
       <div class="hero-content">
