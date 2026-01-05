@@ -697,10 +697,11 @@
 
     /* ===== Logo Bar ===== */
     .logo-bar {
-      padding: 80px 0;
+      padding: 60px 0;
       position: relative;
       border-top: 1px solid var(--color-border);
       border-bottom: 1px solid var(--color-border);
+      overflow: hidden;
     }
 
     .logo-bar-label {
@@ -709,27 +710,47 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--color-text-muted);
-      margin-bottom: 48px;
+      margin-bottom: 40px;
+    }
+
+    .logo-scroll-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     }
 
     .logo-scroll {
       display: flex;
-      gap: 64px;
-      justify-content: center;
-      flex-wrap: wrap;
-      max-width: 1000px;
-      margin: 0 auto;
+      gap: 80px;
+      animation: logoScroll 25s linear infinite;
+      width: max-content;
+    }
+
+    .logo-scroll:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes logoScroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     .client-logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       font-size: 1rem;
       font-weight: 600;
       color: var(--color-text-muted);
-      opacity: 0.6;
-      transition: opacity 0.3s;
+      opacity: 0.5;
+      transition: opacity 0.4s ease;
+      flex-shrink: 0;
     }
 
     .client-logo:hover {
@@ -737,8 +758,8 @@
     }
 
     .client-logo-icon {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       background: var(--color-surface);
       border-radius: 10px;
       display: flex;
@@ -1156,7 +1177,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: color 0.3s;
+      transition: color 0.4s ease;
     }
 
     .faq-item summary::-webkit-details-marker {
@@ -1169,7 +1190,7 @@
       font-size: 1.5rem;
       font-weight: 300;
       color: var(--color-text-muted);
-      transition: all 0.3s var(--ease-out-expo);
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s ease;
     }
 
     .faq-item[open] summary::after {
@@ -1182,10 +1203,43 @@
     }
 
     .faq-answer {
-      padding-bottom: 28px;
       color: var(--color-text-secondary);
       line-height: 1.8;
       max-width: 90%;
+      overflow: hidden;
+      animation: faqOpen 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .faq-item:not([open]) .faq-answer {
+      animation: faqClose 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    @keyframes faqOpen {
+      from {
+        opacity: 0;
+        max-height: 0;
+        padding-bottom: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        max-height: 500px;
+        padding-bottom: 28px;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes faqClose {
+      from {
+        opacity: 1;
+        max-height: 500px;
+        padding-bottom: 28px;
+      }
+      to {
+        opacity: 0;
+        max-height: 0;
+        padding-bottom: 0;
+      }
     }
 
     /* ===== Final CTA ===== */
@@ -1418,9 +1472,10 @@
 
   <!-- Logo Bar -->
   <section class="logo-bar">
-    <div class="container">
-      <p class="logo-bar-label">Trusted by B2B SaaS companies generating $500K - $30M in ARR</p>
+    <p class="logo-bar-label">Trusted by 60+ B2B SaaS Startups</p>
+    <div class="logo-scroll-wrapper">
       <div class="logo-scroll">
+        <!-- First set of logos -->
         <div class="client-logo">
           <div class="client-logo-icon">S</div>
           <span>ScaleUp</span>
@@ -1440,6 +1495,67 @@
         <div class="client-logo">
           <div class="client-logo-icon">M</div>
           <span>Metrix</span>
+        </div>
+        <div class="client-logo">
+          <div class="client-logo-icon">A</div>
+          <span>Accelify</span>
+        </div>
+        <div class="client-logo">
+          <div class="client-logo-icon">V</div>
+          <span>Velora</span>
+        </div>
+        <div class="client-logo">
+          <div class="client-logo-icon">D</div>
+          <span>DataSync</span>
+        </div>
+        <div class="client-logo">
+          <div class="client-logo-icon">F</div>
+          <span>FlowStack</span>
+        </div>
+        <div class="client-logo">
+          <div class="client-logo-icon">R</div>
+          <span>Rocketly</span>
+        </div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="client-logo">
+          <div class="client-logo-icon">S</div>
+          <span>ScaleUp</span>
+        </div>
+        <div class="client-logo">
+          <div class="client-logo-icon">N</div>
+          <span>NovaTech</span>
+        </div>
+        <div class="client-logo">
+          <div class="client-logo-icon">C</div>
+          <span>CloudBase</span>
+        </div>
+        <div class="client-logo">
+          <div class="client-logo-icon">P</div>
+          <span>PipelineHQ</span>
+        </div>
+        <div class="client-logo">
+          <div class="client-logo-icon">M</div>
+          <span>Metrix</span>
+        </div>
+        <div class="client-logo">
+          <div class="client-logo-icon">A</div>
+          <span>Accelify</span>
+        </div>
+        <div class="client-logo">
+          <div class="client-logo-icon">V</div>
+          <span>Velora</span>
+        </div>
+        <div class="client-logo">
+          <div class="client-logo-icon">D</div>
+          <span>DataSync</span>
+        </div>
+        <div class="client-logo">
+          <div class="client-logo-icon">F</div>
+          <span>FlowStack</span>
+        </div>
+        <div class="client-logo">
+          <div class="client-logo-icon">R</div>
+          <span>Rocketly</span>
         </div>
       </div>
     </div>
