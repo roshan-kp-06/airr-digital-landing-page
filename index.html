@@ -1275,9 +1275,67 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ===== Architectural Grid Frame - Blueprint style ===== */
+    .grid-frame {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      pointer-events: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    .grid-frame-inner {
+      width: 100%;
+      max-width: 1180px; /* Match container max-width */
+      height: 100%;
+      position: relative;
+    }
+
+    /* Left and right vertical border lines */
+    .grid-frame-inner::before,
+    .grid-frame-inner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: #d4d0c8;
+    }
+
+    .grid-frame-inner::before {
+      left: 24px; /* Match container padding */
+    }
+
+    .grid-frame-inner::after {
+      right: 24px; /* Match container padding */
+    }
+
+    /* Horizontal section dividers */
+    .framed-section {
+      position: relative;
+      border-top: 1px solid #d4d0c8;
+    }
+
+    /* Hide vertical lines on mobile for cleaner look */
+    @media (max-width: 640px) {
+      .grid-frame-inner::before,
+      .grid-frame-inner::after {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Architectural Grid Frame -->
+  <div class="grid-frame">
+    <div class="grid-frame-inner"></div>
+  </div>
 
   <!-- Background Canvas -->
   <div class="bg-canvas">
@@ -1339,7 +1397,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero framed-section">
 
     <div class="container">
       <div class="hero-content">
@@ -1388,7 +1446,7 @@
   </section>
 
   <!-- Logo Bar -->
-  <section class="logo-bar">
+  <section class="logo-bar framed-section">
     <p class="logo-bar-label">Trusted by 60+ B2B SaaS Startups</p>
     <div class="logo-scroll-wrapper">
       <div class="logo-scroll">
@@ -1479,7 +1537,7 @@
   </section>
 
   <!-- Problem Section -->
-  <section class="section section-dark" id="problem">
+  <section class="section section-dark framed-section" id="problem">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">The Problem</span>
@@ -1535,7 +1593,7 @@
   </section>
 
   <!-- Solution Section -->
-  <section class="section section-glow" id="solution">
+  <section class="section section-glow framed-section" id="solution">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">The Solution</span>
@@ -1586,7 +1644,7 @@
   </section>
 
   <!-- How It Works -->
-  <section class="section section-dark" id="how-it-works">
+  <section class="section section-dark framed-section" id="how-it-works">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">How It Works</span>
@@ -1620,7 +1678,7 @@
   </section>
 
   <!-- Testimonials -->
-  <section class="section" id="case-studies">
+  <section class="section framed-section" id="case-studies">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">Results</span>
@@ -1657,7 +1715,7 @@
   </section>
 
   <!-- FAQ -->
-  <section class="section section-dark" id="faq">
+  <section class="section section-dark framed-section" id="faq">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">FAQ</span>
@@ -1694,7 +1752,7 @@
   </section>
 
   <!-- Final CTA -->
-  <section class="final-cta" id="book-call">
+  <section class="final-cta framed-section" id="book-call">
     <div class="container">
       <div class="cta-content reveal">
         <div class="cta-badge">
