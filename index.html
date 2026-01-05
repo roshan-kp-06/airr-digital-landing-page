@@ -330,16 +330,15 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(20, 20, 19, 0.9);
+      background: linear-gradient(180deg, rgba(10, 10, 9, 0.98) 0%, rgba(10, 10, 9, 0.95) 100%);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--color-border);
-      opacity: 0;
-      transition: opacity 0.4s;
+      border-bottom: 1px solid rgba(217, 119, 87, 0.15);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), 0 0 60px rgba(217, 119, 87, 0.05);
     }
 
     .header.scrolled::before {
-      opacity: 1;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), 0 0 80px rgba(217, 119, 87, 0.08);
     }
 
     .header .container {
@@ -517,7 +516,7 @@
 
     .hero-content {
       text-align: center;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
@@ -578,13 +577,14 @@
     .hero-title .accent {
       color: var(--color-accent);
       font-style: italic;
+      text-shadow: 0 0 60px rgba(217, 119, 87, 0.5);
     }
 
     .hero-subtitle {
       font-size: 1.25rem;
       color: var(--color-text-secondary);
-      max-width: 600px;
-      margin: 0 auto 48px;
+      max-width: 800px;
+      margin: 0 auto 40px;
       line-height: 1.7;
       animation: fadeInUp 0.8s var(--ease-out-expo) 0.2s both;
     }
@@ -796,6 +796,22 @@
       background: transparent;
     }
 
+    .section-glow {
+      position: relative;
+    }
+
+    .section-glow::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(ellipse, rgba(217, 119, 87, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
     .section-header {
       text-align: center;
       margin-bottom: 80px;
@@ -810,6 +826,7 @@
       letter-spacing: 0.12em;
       color: var(--color-accent);
       margin-bottom: 20px;
+      text-shadow: 0 0 30px rgba(217, 119, 87, 0.5);
     }
 
     .section-label::before,
@@ -832,6 +849,7 @@
     .section-title .accent {
       color: var(--color-accent);
       font-style: italic;
+      text-shadow: 0 0 40px rgba(217, 119, 87, 0.4);
     }
 
     .section-subtitle {
@@ -854,13 +872,14 @@
     }
 
     .problem-card {
-      background: var(--color-bg-card);
+      background: linear-gradient(145deg, #1e1e1c 0%, #181816 100%);
       padding: 36px;
       border-radius: 20px;
-      border: 1px solid var(--color-border);
+      border: 1px solid rgba(176, 174, 165, 0.1);
       position: relative;
       overflow: hidden;
       transition: all 0.4s var(--ease-out-expo);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.03);
     }
 
     .problem-card::before {
@@ -926,13 +945,14 @@
     }
 
     .solution-card {
-      background: var(--color-bg-card);
+      background: linear-gradient(145deg, #1e1e1c 0%, #181816 100%);
       padding: 40px 32px;
       border-radius: 20px;
-      border: 1px solid var(--color-border);
+      border: 1px solid rgba(217, 119, 87, 0.15);
       position: relative;
       overflow: hidden;
       transition: all 0.4s var(--ease-out-expo);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 40px rgba(217, 119, 87, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.03);
     }
 
     .solution-card::before {
@@ -1079,11 +1099,12 @@
     }
 
     .testimonial-card {
-      background: var(--color-bg-card);
+      background: linear-gradient(145deg, #1e1e1c 0%, #181816 100%);
       padding: 44px;
       border-radius: 24px;
-      border: 1px solid var(--color-border);
+      border: 1px solid rgba(106, 155, 204, 0.15);
       position: relative;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 40px rgba(106, 155, 204, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.03);
     }
 
     .testimonial-card::before {
@@ -1214,14 +1235,20 @@
     .final-cta::before {
       content: '';
       position: absolute;
-      top: 0;
+      top: -200px;
       left: 50%;
       transform: translateX(-50%);
-      width: 800px;
-      height: 800px;
-      background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
-      opacity: 0.06;
+      width: 1000px;
+      height: 1000px;
+      background: radial-gradient(circle, var(--color-accent) 0%, transparent 60%);
+      opacity: 0.12;
       pointer-events: none;
+      animation: ctaGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes ctaGlow {
+      0%, 100% { opacity: 0.10; transform: translateX(-50%) scale(1); }
+      50% { opacity: 0.15; transform: translateX(-50%) scale(1.05); }
     }
 
     .cta-content {
@@ -1514,7 +1541,7 @@
   </section>
 
   <!-- Solution Section -->
-  <section class="section" id="solution">
+  <section class="section section-glow" id="solution">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">The Solution</span>
