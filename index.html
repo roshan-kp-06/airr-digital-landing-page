@@ -1283,20 +1283,21 @@
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 10;
+      z-index: 3;
       pointer-events: none;
       display: flex;
       justify-content: center;
+      padding: 0 40px;
     }
 
     .grid-frame-inner {
       width: 100%;
-      max-width: 1180px; /* Match container max-width */
+      max-width: 1400px; /* Wider than content for breathing room */
       height: 100%;
       position: relative;
     }
 
-    /* Left and right vertical border lines */
+    /* Left and right vertical border lines - positioned outside content */
     .grid-frame-inner::before,
     .grid-frame-inner::after {
       content: '';
@@ -1304,27 +1305,70 @@
       top: 0;
       bottom: 0;
       width: 1px;
-      background: #d4d0c8;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(75, 118, 236, 0.15) 5%,
+        rgba(20, 20, 19, 0.06) 20%,
+        rgba(20, 20, 19, 0.06) 80%,
+        rgba(75, 118, 236, 0.15) 95%,
+        transparent 100%
+      );
     }
 
     .grid-frame-inner::before {
-      left: 24px; /* Match container padding */
+      left: 0;
     }
 
     .grid-frame-inner::after {
-      right: 24px; /* Match container padding */
+      right: 0;
     }
 
-    /* Horizontal section dividers */
+    /* Horizontal section dividers - subtle gradient */
     .framed-section {
       position: relative;
-      border-top: 1px solid #d4d0c8;
     }
 
-    /* Hide vertical lines on mobile for cleaner look */
-    @media (max-width: 640px) {
+    .framed-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      max-width: 1400px;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(20, 20, 19, 0.08) 15%,
+        rgba(20, 20, 19, 0.08) 85%,
+        transparent 100%
+      );
+      pointer-events: none;
+    }
+
+    /* First section after header - no top border needed */
+    .hero.framed-section::before {
+      display: none;
+    }
+
+    /* Hide vertical lines on smaller screens */
+    @media (max-width: 1200px) {
+      .grid-frame {
+        padding: 0 24px;
+      }
+    }
+
+    @media (max-width: 768px) {
       .grid-frame-inner::before,
       .grid-frame-inner::after {
+        opacity: 0.5;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .grid-frame {
         display: none;
       }
     }
