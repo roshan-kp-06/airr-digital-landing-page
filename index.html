@@ -82,119 +82,236 @@
     /* Background canvas and diagonal lines removed for clean light theme */
 
 
-    /* Floating geometric shapes */
+    /* Floating geometric shapes - more prominent */
     .bg-shape {
       position: absolute;
-      border: 1px solid rgba(20, 20, 19, 0.06);
+      border: 1px solid rgba(75, 118, 236, 0.12);
       pointer-events: none;
     }
 
     .bg-shape-1 {
-      width: 300px;
-      height: 300px;
-      top: 10%;
-      right: 5%;
+      width: 400px;
+      height: 400px;
+      top: 8%;
+      right: 3%;
       border-radius: 50%;
-      animation: shapeFloat 30s ease-in-out infinite;
+      border-color: rgba(75, 118, 236, 0.15);
+      animation: shapeFloat 25s ease-in-out infinite;
     }
 
     .bg-shape-2 {
-      width: 200px;
-      height: 200px;
-      top: 40%;
-      left: 3%;
+      width: 250px;
+      height: 250px;
+      top: 35%;
+      left: 2%;
       transform: rotate(45deg);
-      animation: shapeFloat 25s ease-in-out infinite reverse;
-      animation-delay: -8s;
+      animation: shapeRotate 30s ease-in-out infinite;
     }
 
     .bg-shape-3 {
-      width: 150px;
-      height: 150px;
-      bottom: 20%;
-      right: 15%;
+      width: 180px;
+      height: 180px;
+      bottom: 25%;
+      right: 12%;
       border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-      animation: shapeFloat 35s ease-in-out infinite;
-      animation-delay: -15s;
+      border-color: rgba(75, 118, 236, 0.18);
+      animation: shapeFloat 28s ease-in-out infinite reverse;
+      animation-delay: -10s;
     }
 
     .bg-shape-4 {
-      width: 100px;
-      height: 100px;
-      top: 60%;
-      left: 10%;
+      width: 120px;
+      height: 120px;
+      top: 55%;
+      left: 8%;
       border-radius: 50%;
-      animation: shapeFloat 20s ease-in-out infinite;
-      animation-delay: -3s;
+      animation: shapeFloat 22s ease-in-out infinite;
+      animation-delay: -5s;
+    }
+
+    .bg-shape-5 {
+      width: 80px;
+      height: 80px;
+      top: 75%;
+      right: 25%;
+      border-radius: 50%;
+      border-color: rgba(75, 118, 236, 0.2);
+      animation: shapeFloat 18s ease-in-out infinite;
+      animation-delay: -8s;
+    }
+
+    .bg-shape-6 {
+      width: 200px;
+      height: 200px;
+      top: 20%;
+      left: 25%;
+      border-radius: 50%;
+      animation: shapeFloat 35s ease-in-out infinite reverse;
+      animation-delay: -12s;
     }
 
     @keyframes shapeFloat {
-      0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
-      25% { transform: translateY(-30px) rotate(5deg); opacity: 0.6; }
-      50% { transform: translateY(-10px) rotate(-3deg); opacity: 0.4; }
-      75% { transform: translateY(-40px) rotate(2deg); opacity: 0.5; }
+      0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+      25% { transform: translateY(-40px) rotate(3deg); opacity: 0.7; }
+      50% { transform: translateY(-15px) rotate(-2deg); opacity: 0.5; }
+      75% { transform: translateY(-50px) rotate(1deg); opacity: 0.6; }
     }
 
-    /* Corner accent lines */
+    @keyframes shapeRotate {
+      0%, 100% { transform: rotate(45deg) scale(1); opacity: 0.4; }
+      25% { transform: rotate(50deg) scale(1.02); opacity: 0.6; }
+      50% { transform: rotate(42deg) scale(0.98); opacity: 0.5; }
+      75% { transform: rotate(48deg) scale(1.01); opacity: 0.55; }
+    }
+
+    /* Gradient orbs for depth */
+    .bg-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(60px);
+    }
+
+    .bg-orb-1 {
+      width: 500px;
+      height: 500px;
+      top: 5%;
+      right: -10%;
+      background: radial-gradient(circle, rgba(75, 118, 236, 0.08) 0%, transparent 70%);
+      animation: orbFloat 20s ease-in-out infinite;
+    }
+
+    .bg-orb-2 {
+      width: 400px;
+      height: 400px;
+      top: 40%;
+      left: -8%;
+      background: radial-gradient(circle, rgba(75, 118, 236, 0.06) 0%, transparent 70%);
+      animation: orbFloat 25s ease-in-out infinite reverse;
+      animation-delay: -8s;
+    }
+
+    .bg-orb-3 {
+      width: 350px;
+      height: 350px;
+      bottom: 10%;
+      right: 10%;
+      background: radial-gradient(circle, rgba(90, 138, 184, 0.06) 0%, transparent 70%);
+      animation: orbFloat 22s ease-in-out infinite;
+      animation-delay: -15s;
+    }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 1; }
+      33% { transform: translate(40px, -30px) scale(1.1); opacity: 0.8; }
+      66% { transform: translate(-30px, 40px) scale(0.9); opacity: 1; }
+    }
+
+    /* Corner accent lines - more prominent */
     .bg-corner {
       position: absolute;
       pointer-events: none;
     }
 
     .bg-corner-tl {
-      top: 80px;
-      left: 40px;
-      width: 120px;
-      height: 120px;
-      border-left: 1px solid rgba(75, 118, 236, 0.25);
-      border-top: 1px solid rgba(75, 118, 236, 0.25);
+      top: 100px;
+      left: 60px;
+      width: 150px;
+      height: 150px;
+      border-left: 1px solid rgba(75, 118, 236, 0.35);
+      border-top: 1px solid rgba(75, 118, 236, 0.35);
       animation: cornerPulse 4s ease-in-out infinite;
     }
 
     .bg-corner-br {
-      bottom: 40px;
-      right: 40px;
-      width: 120px;
-      height: 120px;
-      border-right: 1px solid rgba(90, 138, 184, 0.25);
-      border-bottom: 1px solid rgba(90, 138, 184, 0.25);
+      bottom: 60px;
+      right: 60px;
+      width: 150px;
+      height: 150px;
+      border-right: 1px solid rgba(75, 118, 236, 0.35);
+      border-bottom: 1px solid rgba(75, 118, 236, 0.35);
       animation: cornerPulse 4s ease-in-out infinite;
       animation-delay: -2s;
     }
 
-    @keyframes cornerPulse {
-      0%, 100% { opacity: 0.3; transform: scale(1); }
-      50% { opacity: 0.7; transform: scale(1.05); }
+    .bg-corner-tr {
+      top: 200px;
+      right: 80px;
+      width: 80px;
+      height: 80px;
+      border-right: 1px solid rgba(75, 118, 236, 0.25);
+      border-top: 1px solid rgba(75, 118, 236, 0.25);
+      animation: cornerPulse 5s ease-in-out infinite;
+      animation-delay: -1s;
     }
 
-    /* Floating dots */
+    .bg-corner-bl {
+      bottom: 150px;
+      left: 80px;
+      width: 80px;
+      height: 80px;
+      border-left: 1px solid rgba(75, 118, 236, 0.25);
+      border-bottom: 1px solid rgba(75, 118, 236, 0.25);
+      animation: cornerPulse 5s ease-in-out infinite;
+      animation-delay: -3s;
+    }
+
+    @keyframes cornerPulse {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.03); }
+    }
+
+    /* Floating dots - more prominent */
     .bg-dot {
       position: absolute;
-      width: 4px;
-      height: 4px;
-      background: rgba(20, 20, 19, 0.15);
+      width: 5px;
+      height: 5px;
+      background: rgba(75, 118, 236, 0.25);
       border-radius: 50%;
       animation: dotPulse 3s ease-in-out infinite;
     }
 
-    .bg-dot-1 { top: 20%; left: 20%; animation-delay: 0s; }
-    .bg-dot-2 { top: 35%; right: 30%; animation-delay: -0.5s; }
-    .bg-dot-3 { top: 55%; left: 8%; animation-delay: -1s; }
-    .bg-dot-4 { top: 70%; right: 12%; animation-delay: -1.5s; }
-    .bg-dot-5 { top: 85%; left: 35%; animation-delay: -2s; }
-    .bg-dot-6 { top: 15%; right: 15%; animation-delay: -2.5s; }
+    .bg-dot-1 { top: 18%; left: 18%; animation-delay: 0s; }
+    .bg-dot-2 { top: 32%; right: 28%; animation-delay: -0.5s; }
+    .bg-dot-3 { top: 52%; left: 6%; animation-delay: -1s; }
+    .bg-dot-4 { top: 68%; right: 10%; animation-delay: -1.5s; }
+    .bg-dot-5 { top: 82%; left: 32%; animation-delay: -2s; }
+    .bg-dot-6 { top: 12%; right: 18%; animation-delay: -2.5s; }
+    .bg-dot-7 { top: 45%; right: 5%; animation-delay: -0.8s; }
+    .bg-dot-8 { top: 78%; right: 35%; animation-delay: -1.8s; }
 
     @keyframes dotPulse {
-      0%, 100% { transform: scale(1); opacity: 0.2; }
-      50% { transform: scale(1.5); opacity: 0.5; }
+      0%, 100% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.8); opacity: 0.6; }
     }
 
-    /* Gradient orbs - removed edge glow */
+    /* Decorative lines */
+    .bg-line {
+      position: absolute;
+      pointer-events: none;
+      background: rgba(75, 118, 236, 0.1);
+    }
 
-    @keyframes orbFloat {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(30px, -20px) scale(1.05); }
-      66% { transform: translate(-20px, 30px) scale(0.95); }
+    .bg-line-1 {
+      width: 1px;
+      height: 200px;
+      top: 30%;
+      left: 15%;
+      animation: lineFloat 8s ease-in-out infinite;
+    }
+
+    .bg-line-2 {
+      width: 150px;
+      height: 1px;
+      top: 60%;
+      right: 20%;
+      animation: lineFloat 10s ease-in-out infinite reverse;
+      animation-delay: -3s;
+    }
+
+    @keyframes lineFloat {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 0.6; transform: scaleY(1.1); }
     }
 
     img { max-width: 100%; height: auto; display: block; }
@@ -604,13 +721,10 @@
       animation: fadeInUp 0.8s var(--ease-out-expo) 0.4s both;
     }
 
-    /* ===== Logo Bar ===== */
+    /* ===== Logo Bar - Static Grid ===== */
     .logo-bar {
-      padding: 60px 0;
+      padding: 80px 0;
       position: relative;
-      border-top: 1px solid var(--color-border);
-      border-bottom: 1px solid var(--color-border);
-      overflow: hidden;
       z-index: 5;
       background: var(--color-bg);
     }
@@ -621,65 +735,78 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: var(--color-text-muted);
-      margin-bottom: 40px;
+      margin-bottom: 48px;
     }
 
-    .logo-scroll-wrapper {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px 32px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .logo-scroll {
-      display: flex;
-      gap: 80px;
-      animation: logoScroll 25s linear infinite;
-      width: max-content;
-    }
-
-    .logo-scroll:hover {
-      animation-play-state: paused;
-    }
-
-    @keyframes logoScroll {
-      0% {
-        transform: translateX(0);
+    @media (max-width: 768px) {
+      .logo-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 24px;
       }
-      100% {
-        transform: translateX(-50%);
+    }
+
+    @media (max-width: 480px) {
+      .logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px 20px;
       }
     }
 
     .client-logo {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 12px;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--color-text-muted);
-      opacity: 0.5;
-      transition: opacity 0.4s ease;
-      flex-shrink: 0;
+      gap: 10px;
+      padding: 20px 12px;
+      border-radius: 12px;
+      transition: all 0.4s var(--ease-out-expo);
     }
 
     .client-logo:hover {
-      opacity: 1;
+      background: var(--color-surface);
+      transform: translateY(-2px);
     }
 
     .client-logo-icon {
-      width: 40px;
-      height: 40px;
+      width: 48px;
+      height: 48px;
       background: var(--color-surface);
-      border-radius: 10px;
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: var(--font-display);
-      font-weight: 500;
-      font-size: 1rem;
+      font-weight: 600;
+      font-size: 1.125rem;
       color: var(--color-text-secondary);
+      transition: all 0.4s var(--ease-out-expo);
+    }
+
+    .client-logo:hover .client-logo-icon {
+      border-color: var(--color-accent);
+      background: var(--color-accent-dim);
+      color: var(--color-accent);
+    }
+
+    .client-logo-name {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--color-text-muted);
+      text-align: center;
+      transition: color 0.4s ease;
+    }
+
+    .client-logo:hover .client-logo-name {
+      color: var(--color-text);
     }
 
     /* ===== Section Styles ===== */
@@ -1292,12 +1419,12 @@
 
     .grid-frame-inner {
       width: 100%;
-      max-width: 1400px; /* Wider than content for breathing room */
+      max-width: 1400px;
       height: 100%;
       position: relative;
     }
 
-    /* Left and right vertical border lines - positioned outside content */
+    /* Left and right vertical border lines - more prominent */
     .grid-frame-inner::before,
     .grid-frame-inner::after {
       content: '';
@@ -1308,10 +1435,10 @@
       background: linear-gradient(
         to bottom,
         transparent 0%,
-        rgba(75, 118, 236, 0.15) 5%,
-        rgba(20, 20, 19, 0.06) 20%,
-        rgba(20, 20, 19, 0.06) 80%,
-        rgba(75, 118, 236, 0.15) 95%,
+        rgba(75, 118, 236, 0.25) 3%,
+        rgba(20, 20, 19, 0.12) 15%,
+        rgba(20, 20, 19, 0.12) 85%,
+        rgba(75, 118, 236, 0.25) 97%,
         transparent 100%
       );
     }
@@ -1324,7 +1451,7 @@
       right: 0;
     }
 
-    /* Horizontal section dividers - subtle gradient */
+    /* Horizontal section dividers - more visible */
     .framed-section {
       position: relative;
     }
@@ -1341,8 +1468,8 @@
       background: linear-gradient(
         to right,
         transparent 0%,
-        rgba(20, 20, 19, 0.08) 15%,
-        rgba(20, 20, 19, 0.08) 85%,
+        rgba(20, 20, 19, 0.12) 10%,
+        rgba(20, 20, 19, 0.12) 90%,
         transparent 100%
       );
       pointer-events: none;
@@ -1363,7 +1490,7 @@
     @media (max-width: 768px) {
       .grid-frame-inner::before,
       .grid-frame-inner::after {
-        opacity: 0.5;
+        opacity: 0.6;
       }
     }
 
@@ -1383,15 +1510,24 @@
 
   <!-- Background Canvas -->
   <div class="bg-canvas">
+    <!-- Gradient orbs for depth -->
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+
     <!-- Geometric shapes -->
     <div class="bg-shape bg-shape-1"></div>
     <div class="bg-shape bg-shape-2"></div>
     <div class="bg-shape bg-shape-3"></div>
     <div class="bg-shape bg-shape-4"></div>
+    <div class="bg-shape bg-shape-5"></div>
+    <div class="bg-shape bg-shape-6"></div>
 
     <!-- Corner accents -->
     <div class="bg-corner bg-corner-tl"></div>
     <div class="bg-corner bg-corner-br"></div>
+    <div class="bg-corner bg-corner-tr"></div>
+    <div class="bg-corner bg-corner-bl"></div>
 
     <!-- Floating dots -->
     <div class="bg-dot bg-dot-1"></div>
@@ -1400,6 +1536,12 @@
     <div class="bg-dot bg-dot-4"></div>
     <div class="bg-dot bg-dot-5"></div>
     <div class="bg-dot bg-dot-6"></div>
+    <div class="bg-dot bg-dot-7"></div>
+    <div class="bg-dot bg-dot-8"></div>
+
+    <!-- Decorative lines -->
+    <div class="bg-line bg-line-1"></div>
+    <div class="bg-line bg-line-2"></div>
   </div>
 
   <!-- Header -->
@@ -1491,90 +1633,50 @@
 
   <!-- Logo Bar -->
   <section class="logo-bar framed-section">
-    <p class="logo-bar-label">Trusted by 60+ B2B SaaS Startups</p>
-    <div class="logo-scroll-wrapper">
-      <div class="logo-scroll">
-        <!-- First set of logos -->
-        <div class="client-logo">
+    <div class="container">
+      <p class="logo-bar-label reveal">Trusted by 60+ B2B SaaS Startups</p>
+      <div class="logo-grid">
+        <!-- Row 1 -->
+        <div class="client-logo reveal reveal-delay-1">
           <div class="client-logo-icon">S</div>
-          <span>ScaleUp</span>
+          <span class="client-logo-name">ScaleUp</span>
         </div>
-        <div class="client-logo">
+        <div class="client-logo reveal reveal-delay-1">
           <div class="client-logo-icon">N</div>
-          <span>NovaTech</span>
+          <span class="client-logo-name">NovaTech</span>
         </div>
-        <div class="client-logo">
+        <div class="client-logo reveal reveal-delay-1">
           <div class="client-logo-icon">C</div>
-          <span>CloudBase</span>
+          <span class="client-logo-name">CloudBase</span>
         </div>
-        <div class="client-logo">
+        <div class="client-logo reveal reveal-delay-2">
           <div class="client-logo-icon">P</div>
-          <span>PipelineHQ</span>
+          <span class="client-logo-name">PipelineHQ</span>
         </div>
-        <div class="client-logo">
+        <div class="client-logo reveal reveal-delay-2">
           <div class="client-logo-icon">M</div>
-          <span>Metrix</span>
+          <span class="client-logo-name">Metrix</span>
         </div>
-        <div class="client-logo">
+        <!-- Row 2 -->
+        <div class="client-logo reveal reveal-delay-2">
           <div class="client-logo-icon">A</div>
-          <span>Accelify</span>
+          <span class="client-logo-name">Accelify</span>
         </div>
-        <div class="client-logo">
+        <div class="client-logo reveal reveal-delay-3">
           <div class="client-logo-icon">V</div>
-          <span>Velora</span>
+          <span class="client-logo-name">Velora</span>
         </div>
-        <div class="client-logo">
+        <div class="client-logo reveal reveal-delay-3">
           <div class="client-logo-icon">D</div>
-          <span>DataSync</span>
+          <span class="client-logo-name">DataSync</span>
         </div>
-        <div class="client-logo">
+        <div class="client-logo reveal reveal-delay-3">
           <div class="client-logo-icon">F</div>
-          <span>FlowStack</span>
+          <span class="client-logo-name">FlowStack</span>
         </div>
-        <div class="client-logo">
+        <div class="client-logo reveal reveal-delay-4">
           <div class="client-logo-icon">R</div>
-          <span>Rocketly</span>
-        </div>
-        <!-- Duplicate set for seamless loop -->
-        <div class="client-logo">
-          <div class="client-logo-icon">S</div>
-          <span>ScaleUp</span>
-        </div>
-        <div class="client-logo">
-          <div class="client-logo-icon">N</div>
-          <span>NovaTech</span>
-        </div>
-        <div class="client-logo">
-          <div class="client-logo-icon">C</div>
-          <span>CloudBase</span>
-        </div>
-        <div class="client-logo">
-          <div class="client-logo-icon">P</div>
-          <span>PipelineHQ</span>
-        </div>
-        <div class="client-logo">
-          <div class="client-logo-icon">M</div>
-          <span>Metrix</span>
-        </div>
-        <div class="client-logo">
-          <div class="client-logo-icon">A</div>
-          <span>Accelify</span>
-        </div>
-        <div class="client-logo">
-          <div class="client-logo-icon">V</div>
-          <span>Velora</span>
-        </div>
-        <div class="client-logo">
-          <div class="client-logo-icon">D</div>
-          <span>DataSync</span>
-        </div>
-        <div class="client-logo">
-          <div class="client-logo-icon">F</div>
-          <span>FlowStack</span>
-        </div>
-        <div class="client-logo">
-          <div class="client-logo-icon">R</div>
-          <span>Rocketly</span>
+          <span class="client-logo-name">Rocketly</span>
         </div>
       </div>
     </div>
