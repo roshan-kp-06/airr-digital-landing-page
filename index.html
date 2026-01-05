@@ -731,82 +731,102 @@
 
     .logo-bar-label {
       text-align: center;
-      font-size: 0.8125rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+      font-size: 0.9375rem;
       color: var(--color-text-muted);
-      margin-bottom: 48px;
+      margin-bottom: 40px;
     }
 
     .logo-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 24px 32px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
-    }
-
-    @media (max-width: 768px) {
-      .logo-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px 24px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .logo-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px 20px;
-      }
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      overflow: hidden;
     }
 
     .client-logo {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 10px;
-      padding: 20px 12px;
-      border-radius: 12px;
-      transition: all 0.4s var(--ease-out-expo);
+      justify-content: center;
+      padding: 32px 24px;
+      background: var(--color-bg);
+      border-right: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      min-height: 100px;
+      transition: background 0.3s ease;
+    }
+
+    /* Remove right border on last column */
+    .client-logo:nth-child(5n) {
+      border-right: none;
+    }
+
+    /* Remove bottom border on last row */
+    .client-logo:nth-child(n+6) {
+      border-bottom: none;
     }
 
     .client-logo:hover {
       background: var(--color-surface);
-      transform: translateY(-2px);
-    }
-
-    .client-logo-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--color-surface);
-      border: 1px solid var(--color-border);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 1.125rem;
-      color: var(--color-text-secondary);
-      transition: all 0.4s var(--ease-out-expo);
-    }
-
-    .client-logo:hover .client-logo-icon {
-      border-color: var(--color-accent);
-      background: var(--color-accent-dim);
-      color: var(--color-accent);
     }
 
     .client-logo-name {
-      font-size: 0.8125rem;
-      font-weight: 500;
-      color: var(--color-text-muted);
-      text-align: center;
-      transition: color 0.4s ease;
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+      letter-spacing: -0.01em;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
     }
 
     .client-logo:hover .client-logo-name {
-      color: var(--color-text);
+      opacity: 1;
+    }
+
+    @media (max-width: 900px) {
+      .logo-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .client-logo:nth-child(5n) {
+        border-right: 1px solid var(--color-border);
+      }
+      .client-logo:nth-child(3n) {
+        border-right: none;
+      }
+      .client-logo:nth-child(n+6) {
+        border-bottom: 1px solid var(--color-border);
+      }
+      .client-logo:nth-child(n+7) {
+        border-bottom: none;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .client-logo {
+        padding: 24px 16px;
+        min-height: 80px;
+      }
+      .client-logo-name {
+        font-size: 0.9375rem;
+      }
+      .client-logo:nth-child(3n) {
+        border-right: 1px solid var(--color-border);
+      }
+      .client-logo:nth-child(2n) {
+        border-right: none;
+      }
+      .client-logo:nth-child(n+7) {
+        border-bottom: 1px solid var(--color-border);
+      }
+      .client-logo:nth-child(n+9) {
+        border-bottom: none;
+      }
     }
 
     /* ===== Section Styles ===== */
@@ -1635,47 +1655,37 @@
   <section class="logo-bar framed-section">
     <div class="container">
       <p class="logo-bar-label reveal">Trusted by 60+ B2B SaaS Startups</p>
-      <div class="logo-grid">
+      <div class="logo-grid reveal">
         <!-- Row 1 -->
-        <div class="client-logo reveal reveal-delay-1">
-          <div class="client-logo-icon">S</div>
+        <div class="client-logo">
           <span class="client-logo-name">ScaleUp</span>
         </div>
-        <div class="client-logo reveal reveal-delay-1">
-          <div class="client-logo-icon">N</div>
+        <div class="client-logo">
           <span class="client-logo-name">NovaTech</span>
         </div>
-        <div class="client-logo reveal reveal-delay-1">
-          <div class="client-logo-icon">C</div>
+        <div class="client-logo">
           <span class="client-logo-name">CloudBase</span>
         </div>
-        <div class="client-logo reveal reveal-delay-2">
-          <div class="client-logo-icon">P</div>
+        <div class="client-logo">
           <span class="client-logo-name">PipelineHQ</span>
         </div>
-        <div class="client-logo reveal reveal-delay-2">
-          <div class="client-logo-icon">M</div>
+        <div class="client-logo">
           <span class="client-logo-name">Metrix</span>
         </div>
         <!-- Row 2 -->
-        <div class="client-logo reveal reveal-delay-2">
-          <div class="client-logo-icon">A</div>
+        <div class="client-logo">
           <span class="client-logo-name">Accelify</span>
         </div>
-        <div class="client-logo reveal reveal-delay-3">
-          <div class="client-logo-icon">V</div>
+        <div class="client-logo">
           <span class="client-logo-name">Velora</span>
         </div>
-        <div class="client-logo reveal reveal-delay-3">
-          <div class="client-logo-icon">D</div>
+        <div class="client-logo">
           <span class="client-logo-name">DataSync</span>
         </div>
-        <div class="client-logo reveal reveal-delay-3">
-          <div class="client-logo-icon">F</div>
+        <div class="client-logo">
           <span class="client-logo-name">FlowStack</span>
         </div>
-        <div class="client-logo reveal reveal-delay-4">
-          <div class="client-logo-icon">R</div>
+        <div class="client-logo">
           <span class="client-logo-name">Rocketly</span>
         </div>
       </div>
