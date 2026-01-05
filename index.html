@@ -1144,6 +1144,12 @@
       }
     }
 
+    @media (min-width: 1024px) {
+      .testimonial-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
     .testimonial-card {
       background: #ffffff;
       padding: 44px;
@@ -1213,6 +1219,246 @@
     .testimonial-role {
       font-size: 0.875rem;
       color: var(--color-text-muted);
+    }
+
+    /* ===== Case Studies ===== */
+    .case-studies-grid {
+      display: grid;
+      gap: 32px;
+    }
+
+    @media (min-width: 768px) {
+      .case-studies-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .case-study-card {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(20, 20, 19, 0.08);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+      transition: all 0.4s var(--ease-out-expo);
+      z-index: 10;
+      position: relative;
+    }
+
+    .case-study-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(75, 118, 236, 0.3);
+    }
+
+    .case-study-company {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+
+    .case-study-desc {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .case-study-section {
+      margin-bottom: 20px;
+    }
+
+    .case-study-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .case-study-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .case-study-text {
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      font-size: 0.9375rem;
+    }
+
+    .case-study-result {
+      background: var(--color-accent-dim);
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 24px;
+    }
+
+    .case-study-result .case-study-label {
+      color: var(--color-accent);
+    }
+
+    .case-study-result .case-study-text {
+      color: var(--color-text);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    /* ===== Deliverables Grid ===== */
+    .deliverables-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .deliverables-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .deliverables-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .deliverable-card {
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid var(--color-border);
+    }
+
+    .deliverable-title {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--color-text);
+    }
+
+    .deliverable-list {
+      list-style: none;
+    }
+
+    .deliverable-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 8px 0;
+      color: var(--color-text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.5;
+    }
+
+    .deliverable-list li::before {
+      content: '✓';
+      color: var(--color-accent);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    /* ===== Results Grid ===== */
+    .results-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .results-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .results-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .result-card {
+      background: #ffffff;
+      border-radius: 16px;
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+    }
+
+    .result-card-image {
+      width: 100%;
+      height: 180px;
+      background: var(--color-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+    }
+
+    .result-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .result-card-content {
+      padding: 24px;
+    }
+
+    .result-card-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--color-text);
+    }
+
+    .result-card-metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .result-metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .result-metric-label {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+    }
+
+    .result-metric-value {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+
+    /* ===== ICP Section ===== */
+    .icp-list {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .icp-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      margin: 8px;
+      background: var(--color-surface);
+      border-radius: 100px;
+      font-size: 1rem;
+      color: var(--color-text-secondary);
+    }
+
+    .icp-item::before {
+      content: '✓';
+      color: var(--color-accent);
+      font-weight: 600;
     }
 
     /* ===== FAQ ===== */
@@ -1583,16 +1829,15 @@
 
       <nav class="nav">
         <ul class="nav-links">
-          <li><a href="#solution">Solution</a></li>
-          <li><a href="#how-it-works">Process</a></li>
-          <li><a href="#case-studies">Results</a></li>
+          <li><a href="#why-airr">What We Offer</a></li>
+          <li><a href="#case-studies">Case Studies</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
 
         <div class="nav-buttons">
-          <a href="#book-call" class="btn btn-ghost">Sign In</a>
-          <a href="#book-call" class="btn btn-primary">
-            Book a Call
+          <a href="https://calendly.com/airrdigital/discovery-call?back=1&month=2026-01" class="btn btn-primary" target="_blank" rel="noopener">
+            Book A Meeting
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -1609,7 +1854,7 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          For B2B SaaS Companies
+          For B2B SaaS Founders
         </div>
 
         <h1 class="hero-title">
@@ -1639,9 +1884,8 @@
         </div>
 
         <div class="hero-buttons">
-          <a href="#case-studies" class="btn btn-outline btn-large">View Case Studies</a>
-          <a href="#book-call" class="btn btn-primary btn-large">
-            Book a Call
+          <a href="https://calendly.com/airrdigital/discovery-call?back=1&month=2026-01" class="btn btn-primary btn-large" target="_blank" rel="noopener">
+            Let's Talk About Your Ads
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -1651,149 +1895,192 @@
     </div>
   </section>
 
+  <!-- CTA Block -->
+  <section class="section framed-section" style="padding: 60px 0;">
+    <div class="container" style="text-align: center;">
+      <a href="https://calendly.com/airrdigital/discovery-call?back=1&month=2026-01" class="btn btn-primary btn-large" target="_blank" rel="noopener">
+        Book A Meeting
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <p style="font-size: 0.875rem; color: var(--color-text-muted); margin-top: 16px;">Free 30-minute strategy call. No obligation.</p>
+    </div>
+  </section>
+
   <!-- Logo Bar -->
   <section class="logo-bar framed-section">
     <div class="container">
-      <p class="logo-bar-label reveal">Trusted by 60+ B2B SaaS Startups</p>
+      <p class="logo-bar-label reveal">Trusted by 50+ B2B SaaS Companies</p>
       <div class="logo-grid reveal">
         <!-- Row 1 -->
         <div class="client-logo">
-          <span class="client-logo-name">ScaleUp</span>
+          <span class="client-logo-name">Instantly AI</span>
         </div>
         <div class="client-logo">
-          <span class="client-logo-name">NovaTech</span>
+          <span class="client-logo-name">ListKit</span>
         </div>
         <div class="client-logo">
-          <span class="client-logo-name">CloudBase</span>
+          <span class="client-logo-name">TxtCart</span>
         </div>
         <div class="client-logo">
-          <span class="client-logo-name">PipelineHQ</span>
+          <span class="client-logo-name">Trustworthy</span>
         </div>
         <div class="client-logo">
-          <span class="client-logo-name">Metrix</span>
+          <span class="client-logo-name">Buddy Punch</span>
         </div>
         <!-- Row 2 -->
         <div class="client-logo">
-          <span class="client-logo-name">Accelify</span>
+          <span class="client-logo-name">Float</span>
         </div>
         <div class="client-logo">
-          <span class="client-logo-name">Velora</span>
+          <span class="client-logo-name">Simplesat</span>
         </div>
         <div class="client-logo">
-          <span class="client-logo-name">DataSync</span>
+          <span class="client-logo-name">Growthspace</span>
         </div>
         <div class="client-logo">
-          <span class="client-logo-name">FlowStack</span>
+          <span class="client-logo-name">Submagic</span>
         </div>
         <div class="client-logo">
-          <span class="client-logo-name">Rocketly</span>
+          <span class="client-logo-name">Inframail</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Problem Section -->
-  <section class="section section-dark framed-section" id="problem">
+  <!-- Why Airr Digital Section -->
+  <section class="section section-dark framed-section" id="why-airr">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">The Problem</span>
-        <h2 class="section-title">Stuck in the <span class="accent">SaaS Growth Loop?</span></h2>
-        <p class="section-subtitle">You're running ads, getting leads, but the payback takes forever. Growth stalls because you can't reinvest fast enough.</p>
+        <span class="section-label">Why Airr Digital</span>
+        <h2 class="section-title">Why <span class="accent">Airr Digital</span></h2>
+        <p class="section-subtitle">Paid ads. Paid ads. Paid ads...We only focus on paid ads for B2B SaaS companies.</p>
       </div>
 
       <div class="problem-grid">
         <div class="problem-card reveal reveal-delay-1">
           <div class="problem-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 16v-4M12 8h.01"/>
             </svg>
           </div>
-          <h3 class="problem-title">High Customer Acquisition Cost</h3>
-          <p class="problem-text">Your CAC is eating into margins. Long sales cycles mean you're waiting 6-12 months to break even on each customer.</p>
+          <h3 class="problem-title">B2B SaaS Specialists</h3>
+          <p class="problem-text">We only work with B2B SaaS. No ecom, no agencies, no local businesses. This focus means we know exactly what works for your market, your buyers, and your sales cycle.</p>
         </div>
 
         <div class="problem-card reveal reveal-delay-2">
           <div class="problem-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
-          </div>
-          <h3 class="problem-title">Unpredictable Pipeline</h3>
-          <p class="problem-text">Not enough MQLs and SQLs coming in. You're off-track from growth targets and can't forecast revenue reliably.</p>
-        </div>
-
-        <div class="problem-card reveal reveal-delay-3">
-          <div class="problem-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 6v6l4 2"/>
-            </svg>
-          </div>
-          <h3 class="problem-title">Can't Scale Fast Enough</h3>
-          <p class="problem-text">Growth is stalling because you can't reinvest ad spend quickly. The cash flow cycle is working against you.</p>
-        </div>
-
-        <div class="problem-card reveal reveal-delay-4">
-          <div class="problem-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-              <line x1="12" y1="9" x2="12" y2="13"/>
-              <line x1="12" y1="17" x2="12.01" y2="17"/>
-            </svg>
-          </div>
-          <h3 class="problem-title">Ads Not Converting</h3>
-          <p class="problem-text">You've tried agencies, freelancers, even doing it yourself. But the ROI just isn't there. Free trials don't convert to paid.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solution Section -->
-  <section class="section section-glow framed-section" id="solution">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">The Solution</span>
-        <h2 class="section-title">A Complete <span class="accent">Acquisition System</span></h2>
-        <p class="section-subtitle">We don't just run ads. We build a system where your ad spend pays for itself within 30 days.</p>
-      </div>
-
-      <div class="solution-grid">
-        <div class="solution-card reveal reveal-delay-1">
-          <span class="solution-number">01</span>
-          <div class="solution-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 2L2 7l10 5 10-5-10-5z"/>
               <path d="M2 17l10 5 10-5"/>
               <path d="M2 12l10 5 10-5"/>
             </svg>
           </div>
-          <h3 class="solution-title">High-Ticket Front-End Offers</h3>
-          <p class="solution-text">Package your SaaS with services into a $5k-10k front-end offer. Generate cash upfront to fund more ad spend immediately.</p>
+          <h3 class="problem-title">Full-Funnel Ownership</h3>
+          <p class="problem-text">We don't just run ads. We build the landing pages, write the VSL scripts, set up tracking, build the email flows, and optimize the entire funnel. You get one team handling everything, not five vendors pointing fingers.</p>
         </div>
 
-        <div class="solution-card reveal reveal-delay-2">
-          <span class="solution-number">02</span>
-          <div class="solution-icon">
+        <div class="problem-card reveal reveal-delay-3">
+          <div class="problem-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-              <line x1="3" y1="9" x2="21" y2="9"/>
-              <line x1="9" y1="21" x2="9" y2="9"/>
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
             </svg>
           </div>
-          <h3 class="solution-title">Full Funnel Build-Out</h3>
-          <p class="solution-text">VSL scripting, landing pages, ad creative, email sequences, CRM integration. Everything built and optimized for conversion.</p>
+          <h3 class="problem-title">Speed To Results</h3>
+          <p class="problem-text">Most agencies take 4-8 weeks to launch. We get campaigns live in 14 days with new creative testing every 72 hours. You see data faster, we optimize faster, you get results faster.</p>
         </div>
 
-        <div class="solution-card reveal reveal-delay-3">
-          <span class="solution-number">03</span>
-          <div class="solution-icon">
+        <div class="problem-card reveal reveal-delay-4">
+          <div class="problem-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
-              <polyline points="17 6 23 6 23 12"/>
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
           </div>
-          <h3 class="solution-title">72-Hour Creative Testing</h3>
-          <p class="solution-text">We test new creative angles every 3 days. Find winning ads fast, cut losers, scale winners. No waiting months for data.</p>
+          <h3 class="problem-title">Guaranteed Results</h3>
+          <p class="problem-text">We've refined our process across 50+ B2B SaaS clients. The same frameworks that have worked for 1000s of ads get applied to your business from day one. On top of this we guarantee profitable results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="section framed-section" id="case-studies">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Case Studies</span>
+        <h2 class="section-title">Get Real Results And <span class="accent">ROI</span></h2>
+      </div>
+
+      <div class="case-studies-grid">
+        <div class="case-study-card reveal reveal-delay-1">
+          <h3 class="case-study-company">ProductHQ</h3>
+          <p class="case-study-desc">Product management platform</p>
+          <div class="case-study-section">
+            <p class="case-study-label">Problem</p>
+            <p class="case-study-text">Competing in a crowded market with no clear positioning. Struggling to cut through noise and reach decision-makers.</p>
+          </div>
+          <div class="case-study-section">
+            <p class="case-study-label">What We Did</p>
+            <p class="case-study-text">Conducted deep market research. Built ad creatives and campaigns with messaging that resonated with their specific ICP. Launched targeted campaigns across Meta.</p>
+          </div>
+          <div class="case-study-result">
+            <p class="case-study-label">Result</p>
+            <p class="case-study-text">438 qualified meetings booked. 411% decrease in cost per booked call. $1.3M ARR added in 90 days.</p>
+          </div>
+        </div>
+
+        <div class="case-study-card reveal reveal-delay-2">
+          <h3 class="case-study-company">Upnotify</h3>
+          <p class="case-study-desc">Notification infrastructure for SaaS</p>
+          <div class="case-study-section">
+            <p class="case-study-label">Problem</p>
+            <p class="case-study-text">High CAC making paid acquisition unprofitable. Existing funnel wasn't converting cold traffic into demos.</p>
+          </div>
+          <div class="case-study-section">
+            <p class="case-study-label">What We Did</p>
+            <p class="case-study-text">Overhauled their entire paid advertising funnel. Scripted and launched 40+ ad creatives. Built custom landing pages for each campaign. Set up backend nurture and conversion systems.</p>
+          </div>
+          <div class="case-study-result">
+            <p class="case-study-label">Result</p>
+            <p class="case-study-text">7.5x increase in conversions. 245% lower CAC. 9x more sign-ups within 60 days.</p>
+          </div>
+        </div>
+
+        <div class="case-study-card reveal reveal-delay-3">
+          <h3 class="case-study-company">Instantly AI</h3>
+          <p class="case-study-desc">Cold email infrastructure platform</p>
+          <div class="case-study-section">
+            <p class="case-study-label">Problem</p>
+            <p class="case-study-text">Generating traffic but not converting prospects into customers. Needed messaging that resonated with in-market buyers at scale.</p>
+          </div>
+          <div class="case-study-section">
+            <p class="case-study-label">What We Did</p>
+            <p class="case-study-text">Identified high-intent audience segments. Crafted messaging and creative angles that spoke directly to their pain points. Built conversion systems to capture and convert leads.</p>
+          </div>
+          <div class="case-study-result">
+            <p class="case-study-label">Result</p>
+            <p class="case-study-text">$140K MRR added through targeted acquisition and funnel optimization.</p>
+          </div>
+        </div>
+
+        <div class="case-study-card reveal reveal-delay-4">
+          <h3 class="case-study-company">BookYourData</h3>
+          <p class="case-study-desc">B2B contact database</p>
+          <div class="case-study-section">
+            <p class="case-study-label">Problem</p>
+            <p class="case-study-text">Leads weren't converting. Messaging was too generic and didn't differentiate from competitors in a commoditized market.</p>
+          </div>
+          <div class="case-study-section">
+            <p class="case-study-label">What We Did</p>
+            <p class="case-study-text">Developed targeted messaging for specific buyer personas. Built conversion-focused funnels with personalized journeys based on user segment. Created campaigns targeting high-intent prospects.</p>
+          </div>
+          <div class="case-study-result">
+            <p class="case-study-label">Result</p>
+            <p class="case-study-text">$60K MRR added. Improved lead-to-customer conversion across the entire funnel.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1803,30 +2090,40 @@
   <section class="section section-dark framed-section" id="how-it-works">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">How It Works</span>
-        <h2 class="section-title">Three Steps to <span class="accent">Profitable Growth</span></h2>
-        <p class="section-subtitle">We handle everything. You focus on closing deals.</p>
+        <span class="section-label">Process</span>
+        <h2 class="section-title">How It <span class="accent">Works</span></h2>
       </div>
 
       <div class="steps-container">
-        <div class="steps-line"></div>
-        <div class="steps-grid">
+        <div class="steps-grid" style="grid-template-columns: repeat(5, 1fr);">
           <div class="step-card reveal reveal-delay-1">
             <div class="step-number">1</div>
-            <h3 class="step-title">Research & Analysis</h3>
-            <p class="step-text">We analyze your sales calls, interview your team, and audit your current funnel to find exactly what's working and what's broken.</p>
+            <h3 class="step-title">Research & Strategy</h3>
+            <p class="step-text">We gather your sales call transcripts, analyze your ICP, and craft messaging that resonates with in-market prospects.</p>
           </div>
 
           <div class="step-card reveal reveal-delay-2">
             <div class="step-number">2</div>
-            <h3 class="step-title">Build The System</h3>
-            <p class="step-text">VSL scripting, landing pages, 75+ ad variations, email sequences, tracking, CRM integration. We build everything for you.</p>
+            <h3 class="step-title">Offer & Funnel Build</h3>
+            <p class="step-text">We help you craft a compelling offer and build the entire funnel - landing page, VSL, thank you page, sales booking flows.</p>
           </div>
 
           <div class="step-card reveal reveal-delay-3">
             <div class="step-number">3</div>
-            <h3 class="step-title">Launch & Optimize</h3>
-            <p class="step-text">We launch campaigns and test new creative angles every 72 hours. Scale winners fast, cut losers, optimize continuously.</p>
+            <h3 class="step-title">Ad Creative Production</h3>
+            <p class="step-text">We script, design, and edit your ad creatives - static images, video ads, carousels. New variations tested every 72 hours.</p>
+          </div>
+
+          <div class="step-card reveal reveal-delay-4">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Campaign Launch & Testing</h3>
+            <p class="step-text">We launch campaigns, set up tracking and attribution, and test 60+ creatives simultaneously to find winners within 5-14 days.</p>
+          </div>
+
+          <div class="step-card reveal reveal-delay-4">
+            <div class="step-number">5</div>
+            <h3 class="step-title">Optimization & Scale</h3>
+            <p class="step-text">We analyze performance data, cut what's not working, and scale the winners to maximize ROAS and profit on ad spend.</p>
           </div>
         </div>
       </div>
@@ -1834,37 +2131,319 @@
   </section>
 
   <!-- Testimonials -->
-  <section class="section framed-section" id="case-studies">
+  <section class="section framed-section" id="testimonials">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">Results</span>
+        <span class="section-label">Testimonials</span>
         <h2 class="section-title">What Our <span class="accent">Clients Say</span></h2>
-        <p class="section-subtitle">Real results from B2B SaaS founders like you.</p>
       </div>
 
       <div class="testimonial-grid">
         <div class="testimonial-card reveal reveal-delay-1">
-          <span class="testimonial-result">245% Lower CAC</span>
-          <p class="testimonial-quote">"They completely transformed our acquisition funnel. We went from burning cash on ads to having a predictable, profitable system that pays for itself within weeks."</p>
+          <span class="testimonial-result">$140K MRR Added</span>
+          <p class="testimonial-quote">"Airr Digital transformed our paid acquisition. They didn't just run ads - they rebuilt our entire funnel and the results speak for themselves. Best decision we made for growth."</p>
           <div class="testimonial-author">
-            <div class="testimonial-avatar">M</div>
+            <div class="testimonial-avatar">A</div>
             <div>
-              <div class="testimonial-name">Michael Chen</div>
-              <div class="testimonial-role">CEO, SaaS Company</div>
+              <div class="testimonial-name">Andre</div>
+              <div class="testimonial-role">Founder, ListKit</div>
             </div>
           </div>
         </div>
 
         <div class="testimonial-card reveal reveal-delay-2">
-          <span class="testimonial-result">30-Day Payback</span>
-          <p class="testimonial-quote">"The high-ticket front-end offer strategy was a game-changer. We're now generating upfront cash from every new customer, which lets us scale aggressively."</p>
+          <span class="testimonial-result">3.8x ROAS</span>
+          <p class="testimonial-quote">"We tried 3 agencies before Airr Digital. The difference is they actually understand B2B SaaS buying cycles. Our CAC dropped by half in 8 weeks."</p>
           <div class="testimonial-author">
-            <div class="testimonial-avatar">S</div>
+            <div class="testimonial-avatar">C</div>
             <div>
-              <div class="testimonial-name">Sarah Thompson</div>
-              <div class="testimonial-role">Founder, B2B Platform</div>
+              <div class="testimonial-name">Carson Szeder</div>
+              <div class="testimonial-role">CEO, AI Edtech SaaS</div>
             </div>
           </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-3">
+          <span class="testimonial-result">7.5x Conversions</span>
+          <p class="testimonial-quote">"The speed was incredible. Campaigns live in 14 days, first demos booked within a week. They handle everything so we can focus on building product."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">A</div>
+            <div>
+              <div class="testimonial-name">Andrew Osborne</div>
+              <div class="testimonial-role">Founder, Upnotify</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Everything You Get -->
+  <section class="section section-dark framed-section" id="deliverables">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Deliverables</span>
+        <h2 class="section-title">Everything <span class="accent">You Get</span></h2>
+      </div>
+
+      <div class="deliverables-grid">
+        <div class="deliverable-card reveal reveal-delay-1">
+          <h3 class="deliverable-title">Strategy & Research</h3>
+          <ul class="deliverable-list">
+            <li>Sales call analysis to identify winning angles</li>
+            <li>ICP research and persona development</li>
+            <li>Competitor audit and differentiation mapping</li>
+            <li>Messaging development and positioning</li>
+            <li>Offer structuring and optimization</li>
+          </ul>
+        </div>
+
+        <div class="deliverable-card reveal reveal-delay-2">
+          <h3 class="deliverable-title">Funnel Build</h3>
+          <ul class="deliverable-list">
+            <li>Landing page copy, design, and development</li>
+            <li>VSL scripting</li>
+            <li>VSL editing and production</li>
+            <li>Thank you page and confirmation flow</li>
+            <li>Booking system setup and optimization</li>
+          </ul>
+        </div>
+
+        <div class="deliverable-card reveal reveal-delay-3">
+          <h3 class="deliverable-title">Ad Creatives</h3>
+          <ul class="deliverable-list">
+            <li>Ad scripting and copywriting</li>
+            <li>Static image ad design</li>
+            <li>Video ad editing and production</li>
+            <li>Carousel ad creation</li>
+            <li>50+ total ad angles</li>
+          </ul>
+        </div>
+
+        <div class="deliverable-card reveal reveal-delay-1">
+          <h3 class="deliverable-title">Tracking & Attribution</h3>
+          <ul class="deliverable-list">
+            <li>Meta Pixel setup and configuration</li>
+            <li>Conversion event tracking</li>
+            <li>Server-side tracking implementation</li>
+            <li>Call tracking integration</li>
+            <li>Performance dashboards and reporting</li>
+          </ul>
+        </div>
+
+        <div class="deliverable-card reveal reveal-delay-2">
+          <h3 class="deliverable-title">Email Flows</h3>
+          <ul class="deliverable-list">
+            <li>Pre-call nurture sequences</li>
+            <li>Post-call follow-up automation</li>
+            <li>Lead reactivation campaigns</li>
+            <li>Winback flows for lost opportunities</li>
+            <li>Trial-to-paid conversion sequences</li>
+          </ul>
+        </div>
+
+        <div class="deliverable-card reveal reveal-delay-3">
+          <h3 class="deliverable-title">Sales & CRM</h3>
+          <ul class="deliverable-list">
+            <li>CRM workflow optimization</li>
+            <li>Pipeline setup and configuration</li>
+            <li>Lead scoring implementation</li>
+          </ul>
+        </div>
+
+        <div class="deliverable-card reveal reveal-delay-1">
+          <h3 class="deliverable-title">Ongoing Optimization</h3>
+          <ul class="deliverable-list">
+            <li>Creative testing and iteration</li>
+            <li>A/B testing across funnel</li>
+            <li>Weekly performance reporting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More Results -->
+  <section class="section framed-section" id="more-results">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Results</span>
+        <h2 class="section-title">More Client <span class="accent">Results</span></h2>
+      </div>
+
+      <div class="results-grid">
+        <div class="result-card reveal reveal-delay-1">
+          <div class="result-card-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=360&fit=crop" alt="Marketing dashboard showing metrics">
+          </div>
+          <div class="result-card-content">
+            <h4 class="result-card-title">B2B Martech Startup</h4>
+            <div class="result-card-metrics">
+              <div class="result-metric">
+                <span class="result-metric-label">Cost Per Demo</span>
+                <span class="result-metric-value">$127</span>
+              </div>
+              <div class="result-metric">
+                <span class="result-metric-label">CAC</span>
+                <span class="result-metric-value">$890</span>
+              </div>
+              <div class="result-metric">
+                <span class="result-metric-label">MRR Added</span>
+                <span class="result-metric-value">+$52k</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-card reveal reveal-delay-2">
+          <div class="result-card-image">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=360&fit=crop" alt="Analytics dashboard">
+          </div>
+          <div class="result-card-content">
+            <h4 class="result-card-title">AI Software Development SaaS</h4>
+            <div class="result-card-metrics">
+              <div class="result-metric">
+                <span class="result-metric-label">Cost Per Demo</span>
+                <span class="result-metric-value">$89</span>
+              </div>
+              <div class="result-metric">
+                <span class="result-metric-label">ROAS</span>
+                <span class="result-metric-value">4.2x</span>
+              </div>
+              <div class="result-metric">
+                <span class="result-metric-label">MRR Added</span>
+                <span class="result-metric-value">+$215k</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-card reveal reveal-delay-3">
+          <div class="result-card-image">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=360&fit=crop" alt="CRM interface">
+          </div>
+          <div class="result-card-content">
+            <h4 class="result-card-title">B2B Data Enrichment Tool</h4>
+            <div class="result-card-metrics">
+              <div class="result-metric">
+                <span class="result-metric-label">Cost Per Demo</span>
+                <span class="result-metric-value">$156</span>
+              </div>
+              <div class="result-metric">
+                <span class="result-metric-label">Payback Period</span>
+                <span class="result-metric-value">28 days</span>
+              </div>
+              <div class="result-metric">
+                <span class="result-metric-label">MRR Added</span>
+                <span class="result-metric-value">+$180k</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-card reveal reveal-delay-1">
+          <div class="result-card-image">
+            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=360&fit=crop" alt="Sales automation platform">
+          </div>
+          <div class="result-card-content">
+            <h4 class="result-card-title">B2B Sales Automation SaaS</h4>
+            <div class="result-card-metrics">
+              <div class="result-metric">
+                <span class="result-metric-label">Cost Per Demo</span>
+                <span class="result-metric-value">$73</span>
+              </div>
+              <div class="result-metric">
+                <span class="result-metric-label">ROAS</span>
+                <span class="result-metric-value">3.8x</span>
+              </div>
+              <div class="result-metric">
+                <span class="result-metric-label">MRR Added</span>
+                <span class="result-metric-value">+$410k</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-card reveal reveal-delay-2">
+          <div class="result-card-image">
+            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=360&fit=crop" alt="GTM platform interface">
+          </div>
+          <div class="result-card-content">
+            <h4 class="result-card-title">B2B AI GTM Platform</h4>
+            <div class="result-card-metrics">
+              <div class="result-metric">
+                <span class="result-metric-label">Cost Per Demo</span>
+                <span class="result-metric-value">$112</span>
+              </div>
+              <div class="result-metric">
+                <span class="result-metric-label">CAC</span>
+                <span class="result-metric-value">$1,200</span>
+              </div>
+              <div class="result-metric">
+                <span class="result-metric-label">MRR Added</span>
+                <span class="result-metric-value">+$95k</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Work With -->
+  <section class="section section-dark framed-section" id="icp">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Ideal Client</span>
+        <h2 class="section-title">Who We <span class="accent">Work With</span></h2>
+      </div>
+
+      <div class="icp-list reveal">
+        <span class="icp-item">B2B SaaS companies</span>
+        <span class="icp-item">With a sales-led GTM motion</span>
+        <span class="icp-item">$500k+ ARR</span>
+        <span class="icp-item">Reached product-market fit</span>
+        <span class="icp-item">Ready to invest $200+/day in meta ads</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Second Logo Grid -->
+  <section class="logo-bar framed-section">
+    <div class="container">
+      <p class="logo-bar-label reveal">Join 50+ B2B SaaS Companies</p>
+      <div class="logo-grid reveal">
+        <!-- Row 1 -->
+        <div class="client-logo">
+          <span class="client-logo-name">Instantly AI</span>
+        </div>
+        <div class="client-logo">
+          <span class="client-logo-name">ListKit</span>
+        </div>
+        <div class="client-logo">
+          <span class="client-logo-name">TxtCart</span>
+        </div>
+        <div class="client-logo">
+          <span class="client-logo-name">Trustworthy</span>
+        </div>
+        <div class="client-logo">
+          <span class="client-logo-name">Growthspace</span>
+        </div>
+        <!-- Row 2 -->
+        <div class="client-logo">
+          <span class="client-logo-name">Buddy Punch</span>
+        </div>
+        <div class="client-logo">
+          <span class="client-logo-name">Float</span>
+        </div>
+        <div class="client-logo">
+          <span class="client-logo-name">Simplesat</span>
+        </div>
+        <div class="client-logo">
+          <span class="client-logo-name">Submagic</span>
+        </div>
+        <div class="client-logo">
+          <span class="client-logo-name">Promotix</span>
         </div>
       </div>
     </div>
@@ -1875,33 +2454,63 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label">FAQ</span>
-        <h2 class="section-title">Common <span class="accent">Questions</span></h2>
+        <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
       </div>
 
       <div class="faq-list reveal">
         <details class="faq-item">
-          <summary>How is this different from other agencies?</summary>
-          <p class="faq-answer">Most agencies just run ads. We build complete acquisition systems with high-ticket front-end offers that generate cash immediately. This means your ad spend pays for itself within 30 days instead of waiting 6-12 months for ROI.</p>
-        </details>
-
-        <details class="faq-item">
-          <summary>What's a high-ticket front-end offer?</summary>
-          <p class="faq-answer">We package your SaaS with implementation services into a $5k-$10k offer. This qualifies buyers immediately (they have budget and urgency), generates upfront cash to fund more ad spend, and creates a faster payback period.</p>
+          <summary>What makes you different from other agencies?</summary>
+          <p class="faq-answer">We only work with B2B SaaS companies. That's it. This means every framework, every creative angle, every optimization we've learned comes from companies like yours. We also own the entire funnel - ads, landing pages, VSL, email flows - so you're not coordinating between five different vendors.</p>
         </details>
 
         <details class="faq-item">
           <summary>How long until I see results?</summary>
-          <p class="faq-answer">Setup takes about 2 weeks. Most clients see initial results within the first 30 days of campaigns running. We guarantee to halve your CAC and achieve a 30-day payback period within 12 weeks.</p>
+          <p class="faq-answer">We launch campaigns within 14 days of kickoff. Most clients see their first booked demos within the first 7 days. Meaningful data on what's working usually comes by week 2-3. Full optimization and scaling typically happens over 6-8 weeks.</p>
         </details>
 
         <details class="faq-item">
-          <summary>What's included in the service?</summary>
-          <p class="faq-answer">Everything: customer research, offer design, VSL scripting and production, landing page design and development, 75+ ad creative variations, email sequences, CRM integration, tracking setup, and ongoing media buying and optimization.</p>
+          <summary>What's the minimum ad spend required?</summary>
+          <p class="faq-answer">We recommend a minimum of $200/day in ad spend. This gives us enough data to test creative angles, optimize campaigns, and scale what's working.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you work with PLG or self-serve companies?</summary>
+          <p class="faq-answer">We primarily work with sales-led B2B SaaS. If your main GTM motion is 100% product led growth, we're probably not the right fit. If you have a sales team and want to drive more qualified demos, that's where we excel.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What if I've tried paid ads before and they didn't work?</summary>
+          <p class="faq-answer">Most B2B SaaS companies fail at paid ads for one of three reasons: wrong offer, wrong creative, or wrong funnel. We fix all three. We've worked with companies who burned through agencies before finding us - the difference is we understand B2B SaaS buying cycles and build everything around booking qualified demos, not vanity metrics.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How involved do I need to be?</summary>
+          <p class="faq-answer">During the first 2-3 weeks, we'll need more of your time - sales call recordings, offer feedback, creative approvals. After launch, it's typically a 30-minute call per week plus Slack for communication. We handle the execution.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do you handle creative production or do I need to film content?</summary>
+          <p class="faq-answer">We handle everything - scripting, design, editing. For video ads and VSLs, we'll need you or your team to film the talking head portions. We provide the scripts and shot lists, you just need to spend 1 hour per month (approximately) on filming.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>What platforms do you run ads on?</summary>
+          <p class="faq-answer">Primarily Meta (Facebook and Instagram). We've seen Meta have the lowest CAC, and highest ROAS across 60+ B2B SaaS clients we've worked with.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>How do you charge? What's the pricing model?</summary>
+          <p class="faq-answer">We have setup, monthly, 3-month or 6-month plans depending on what you're looking for. Our pricing ranges from $5k - $30k across our plans and offers. We can share specific pricing on a call once we understand your situation.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Do I own everything you create?</summary>
+          <p class="faq-answer">Yes. All landing pages, VSL scripts, ad creatives, email flows - everything we build is yours. If we part ways, you keep all assets and can continue running campaigns yourself.</p>
         </details>
 
         <details class="faq-item">
           <summary>What if it doesn't work?</summary>
-          <p class="faq-answer">We offer a performance guarantee. After 90 days, the trailing 30 days of paid advertising will be profitable. If we don't deliver, we'll keep working until you're profitable or provide a refund based on our agreement terms.</p>
+          <p class="faq-answer">Our goal is to make you profitable within 90 days. So we guarantee results, and offer a full refund if results are not met. If we've done our job and you've held up your end (ad spend, timely approvals, following our process), you will see results.</p>
         </details>
       </div>
     </div>
@@ -1934,22 +2543,21 @@
 
         <span class="section-label">Ready to Scale?</span>
         <h2 class="section-title">
-          Get Traffic That Converts from <span class="accent">Paid Ads</span>
+          Let's Talk About Your <span class="accent">Ad Funnel</span>
         </h2>
         <p class="section-subtitle" style="margin-bottom: 40px;">
-          Book a free 30-minute strategy call. We'll analyze your funnel and show you exactly how we'd build a system that pays for itself.
+          Book a free 30-minute strategy call. We'll analyze your current funnel, identify the biggest opportunities, and show you exactly how you can improve your ads, or start running profitable meta ads.
         </p>
 
         <div class="hero-buttons" style="margin-bottom: 0;">
-          <a href="#case-studies" class="btn btn-outline btn-large">View Case Studies</a>
-          <a href="https://calendly.com/airrdigital" class="btn btn-primary btn-large" target="_blank" rel="noopener">
-            Book a Call
+          <a href="https://calendly.com/airrdigital/discovery-call?back=1&month=2026-01" class="btn btn-primary btn-large" target="_blank" rel="noopener">
+            Book A Meeting
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
         </div>
-        <p class="cta-note">Free 30-min call. No obligation.</p>
+        <p class="cta-note">Free 30-minute strategy call. No obligation.</p>
       </div>
     </div>
   </section>
@@ -1958,7 +2566,7 @@
   <footer class="footer">
     <div class="container">
       <p class="footer-text">
-        <span class="footer-brand">Airr Digital</span> &mdash; B2B SaaS Customer Acquisition
+        &copy; 2026 <span class="footer-brand">Airr Digital</span>. All rights reserved.
       </p>
     </div>
   </footer>
