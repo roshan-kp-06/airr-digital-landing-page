@@ -12,23 +12,23 @@
 
   <style>
     :root {
-      /* Anthropic Brand Colors */
-      --color-bg: #141413;
-      --color-bg-elevated: #1c1c1a;
-      --color-bg-card: #232320;
-      --color-surface: #2a2a27;
-      --color-border: rgba(176, 174, 165, 0.12);
-      --color-border-strong: rgba(176, 174, 165, 0.25);
-      --color-text: #faf9f5;
-      --color-text-secondary: #b0aea5;
+      /* Anthropic Brand Colors - Light Theme */
+      --color-bg: #faf9f5;
+      --color-bg-elevated: #f5f4f0;
+      --color-bg-card: #ffffff;
+      --color-surface: #e8e6dc;
+      --color-border: rgba(20, 20, 19, 0.08);
+      --color-border-strong: rgba(20, 20, 19, 0.15);
+      --color-text: #141413;
+      --color-text-secondary: #4a4a47;
       --color-text-muted: #807e76;
       --color-accent: #d97757;
-      --color-accent-dim: rgba(217, 119, 87, 0.15);
-      --color-accent-glow: rgba(217, 119, 87, 0.4);
-      --color-teal: #6a9bcc;
-      --color-teal-dim: rgba(106, 155, 204, 0.15);
-      --color-coral: #788c5d;
-      --color-coral-dim: rgba(120, 140, 93, 0.15);
+      --color-accent-dim: rgba(217, 119, 87, 0.12);
+      --color-accent-glow: rgba(217, 119, 87, 0.3);
+      --color-teal: #5a8ab8;
+      --color-teal-dim: rgba(90, 138, 184, 0.12);
+      --color-coral: #6a7d4d;
+      --color-coral-dim: rgba(106, 125, 77, 0.12);
 
       /* Anthropic Brand Fonts */
       --font-display: 'Poppins', Arial, sans-serif;
@@ -71,8 +71,8 @@
       width: 100%;
       height: 100%;
       background-image:
-        linear-gradient(rgba(176, 174, 165, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(176, 174, 165, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(20, 20, 19, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 20, 19, 0.04) 1px, transparent 1px);
       background-size: 80px 80px;
       pointer-events: none;
       z-index: 1;
@@ -107,7 +107,7 @@
     /* Animated diagonal lines */
     .bg-line {
       position: absolute;
-      background: linear-gradient(90deg, transparent, rgba(176, 174, 165, 0.06), transparent);
+      background: linear-gradient(90deg, transparent, rgba(20, 20, 19, 0.06), transparent);
       transform-origin: center;
     }
 
@@ -157,7 +157,7 @@
     /* Floating geometric shapes */
     .bg-shape {
       position: absolute;
-      border: 1px solid rgba(176, 174, 165, 0.08);
+      border: 1px solid rgba(20, 20, 19, 0.06);
       pointer-events: none;
     }
 
@@ -218,8 +218,8 @@
       left: 40px;
       width: 120px;
       height: 120px;
-      border-left: 1px solid rgba(217, 119, 87, 0.15);
-      border-top: 1px solid rgba(217, 119, 87, 0.15);
+      border-left: 1px solid rgba(217, 119, 87, 0.25);
+      border-top: 1px solid rgba(217, 119, 87, 0.25);
       animation: cornerPulse 4s ease-in-out infinite;
     }
 
@@ -228,8 +228,8 @@
       right: 40px;
       width: 120px;
       height: 120px;
-      border-right: 1px solid rgba(106, 155, 204, 0.15);
-      border-bottom: 1px solid rgba(106, 155, 204, 0.15);
+      border-right: 1px solid rgba(90, 138, 184, 0.25);
+      border-bottom: 1px solid rgba(90, 138, 184, 0.25);
       animation: cornerPulse 4s ease-in-out infinite;
       animation-delay: -2s;
     }
@@ -244,7 +244,7 @@
       position: absolute;
       width: 4px;
       height: 4px;
-      background: rgba(176, 174, 165, 0.2);
+      background: rgba(20, 20, 19, 0.15);
       border-radius: 50%;
       animation: dotPulse 3s ease-in-out infinite;
     }
@@ -294,15 +294,15 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(10, 10, 9, 0.98) 0%, rgba(10, 10, 9, 0.95) 100%);
+      background: linear-gradient(180deg, rgba(250, 249, 245, 0.98) 0%, rgba(250, 249, 245, 0.95) 100%);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(217, 119, 87, 0.15);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), 0 0 60px rgba(217, 119, 87, 0.05);
+      border-bottom: 1px solid rgba(20, 20, 19, 0.08);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06), 0 0 60px rgba(217, 119, 87, 0.03);
     }
 
     .header.scrolled::before {
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), 0 0 80px rgba(217, 119, 87, 0.08);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08), 0 0 80px rgba(217, 119, 87, 0.05);
     }
 
     .header .container {
@@ -491,22 +491,22 @@
       align-items: center;
       gap: 12px;
       padding: 14px 28px;
-      background: linear-gradient(135deg, rgba(217, 119, 87, 0.15) 0%, rgba(217, 119, 87, 0.05) 100%);
-      border: 1px solid rgba(217, 119, 87, 0.3);
+      background: linear-gradient(135deg, rgba(217, 119, 87, 0.12) 0%, rgba(217, 119, 87, 0.04) 100%);
+      border: 1px solid rgba(217, 119, 87, 0.35);
       border-radius: 100px;
       font-size: 0.9375rem;
       font-weight: 500;
       color: var(--color-text);
       margin-bottom: 32px;
       animation: fadeInUp 0.8s var(--ease-out-expo) both, badgeGlow 3s ease-in-out infinite;
-      box-shadow: 0 0 30px rgba(217, 119, 87, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 30px rgba(217, 119, 87, 0.12);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
     }
 
     @keyframes badgeGlow {
-      0%, 100% { box-shadow: 0 0 30px rgba(217, 119, 87, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1); }
-      50% { box-shadow: 0 0 50px rgba(217, 119, 87, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15); }
+      0%, 100% { box-shadow: 0 0 30px rgba(217, 119, 87, 0.12); }
+      50% { box-shadow: 0 0 50px rgba(217, 119, 87, 0.2); }
     }
 
     .hero-badge-dot {
@@ -596,7 +596,7 @@
       width: 100%;
       height: 100%;
       cursor: pointer;
-      background: linear-gradient(135deg, #1a1a18 0%, #232320 50%, #141413 100%);
+      background: linear-gradient(135deg, #e8e6dc 0%, #d8d6cc 50%, #cbc9bf 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -610,8 +610,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+        linear-gradient(rgba(20, 20, 19, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 20, 19, 0.06) 1px, transparent 1px);
       background-size: 40px 40px;
       opacity: 0.5;
     }
@@ -857,14 +857,14 @@
     }
 
     .problem-card {
-      background: linear-gradient(145deg, #1e1e1c 0%, #181816 100%);
+      background: #ffffff;
       padding: 36px;
       border-radius: 20px;
-      border: 1px solid rgba(176, 174, 165, 0.1);
+      border: 1px solid rgba(20, 20, 19, 0.08);
       position: relative;
       overflow: hidden;
       transition: all 0.4s var(--ease-out-expo);
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), inset 0 -1px 0 rgba(0, 0, 0, 0.02);
     }
 
     .problem-card::before {
@@ -930,14 +930,14 @@
     }
 
     .solution-card {
-      background: linear-gradient(145deg, #1e1e1c 0%, #181816 100%);
+      background: #ffffff;
       padding: 40px 32px;
       border-radius: 20px;
-      border: 1px solid rgba(217, 119, 87, 0.15);
+      border: 1px solid rgba(217, 119, 87, 0.2);
       position: relative;
       overflow: hidden;
       transition: all 0.4s var(--ease-out-expo);
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 40px rgba(217, 119, 87, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 0 40px rgba(217, 119, 87, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.02);
     }
 
     .solution-card::before {
@@ -1084,12 +1084,12 @@
     }
 
     .testimonial-card {
-      background: linear-gradient(145deg, #1e1e1c 0%, #181816 100%);
+      background: #ffffff;
       padding: 44px;
       border-radius: 24px;
-      border: 1px solid rgba(106, 155, 204, 0.15);
+      border: 1px solid rgba(90, 138, 184, 0.15);
       position: relative;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 40px rgba(106, 155, 204, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 0 40px rgba(90, 138, 184, 0.06), inset 0 -1px 0 rgba(0, 0, 0, 0.02);
     }
 
     .testimonial-card::before {
