@@ -55,27 +55,50 @@
       color: var(--color-gray-700);
       background-color: var(--color-white);
       line-height: 1.6;
-      position: relative;
     }
 
-    /* Architectural grid lines overlay */
-    body::before {
+    /* ===== Architectural Grid Structure ===== */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      border: 1px solid var(--color-gray-200);
+      border-top: none;
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    .arch-cell {
+      height: 80px;
+      border-right: 1px solid var(--color-gray-200);
+    }
+
+    .arch-cell:last-child {
+      border-right: none;
+    }
+
+    /* Page wrapper with side lines */
+    .page-wrapper {
+      position: relative;
+      max-width: calc(var(--container-max) + 48px);
+      margin: 0 auto;
+    }
+
+    .page-wrapper::before,
+    .page-wrapper::after {
       content: '';
-      position: fixed;
+      position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
       bottom: 0;
-      pointer-events: none;
-      z-index: 0;
-      background-image:
-        linear-gradient(90deg, transparent calc(50% - 600px), var(--color-gray-200) calc(50% - 600px), var(--color-gray-200) calc(50% - 599px), transparent calc(50% - 599px)),
-        linear-gradient(90deg, transparent calc(50% - 400px), var(--color-gray-200) calc(50% - 400px), var(--color-gray-200) calc(50% - 399px), transparent calc(50% - 399px)),
-        linear-gradient(90deg, transparent calc(50% - 200px), var(--color-gray-200) calc(50% - 200px), var(--color-gray-200) calc(50% - 199px), transparent calc(50% - 199px)),
-        linear-gradient(90deg, transparent calc(50% + 200px), var(--color-gray-200) calc(50% + 200px), var(--color-gray-200) calc(50% + 201px), transparent calc(50% + 201px)),
-        linear-gradient(90deg, transparent calc(50% + 400px), var(--color-gray-200) calc(50% + 400px), var(--color-gray-200) calc(50% + 401px), transparent calc(50% + 401px)),
-        linear-gradient(90deg, transparent calc(50% + 600px), var(--color-gray-200) calc(50% + 600px), var(--color-gray-200) calc(50% + 601px), transparent calc(50% + 601px));
-      opacity: 0.6;
+      width: 1px;
+      background: var(--color-gray-200);
+    }
+
+    .page-wrapper::before {
+      left: 24px;
+    }
+
+    .page-wrapper::after {
+      right: 24px;
     }
 
     img { max-width: 100%; height: auto; display: block; }
@@ -86,8 +109,6 @@
       max-width: var(--container-max);
       margin: 0 auto;
       padding: 0 24px;
-      position: relative;
-      z-index: 1;
     }
 
     /* ===== Header ===== */
@@ -382,72 +403,12 @@
       border: 0;
     }
 
-    /* ===== Architectural Divider Lines ===== */
-    .section-divider {
-      position: relative;
-    }
-
-    .section-divider::before,
-    .section-divider::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--color-gray-200);
-    }
-
-    .section-divider::before {
-      top: 0;
-    }
-
-    .section-divider::after {
-      bottom: 0;
-    }
-
-    .section-divider-top::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--color-gray-200);
-    }
-
-    .section-divider-bottom::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--color-gray-200);
-    }
-
     /* ===== Logo Bar ===== */
     .logo-bar {
       padding: 64px 0;
       text-align: center;
       position: relative;
-    }
-
-    .logo-bar::before,
-    .logo-bar::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--color-gray-200);
-    }
-
-    .logo-bar::before {
-      top: 0;
-    }
-
-    .logo-bar::after {
-      bottom: 0;
+      border-bottom: 1px solid var(--color-gray-200);
     }
 
     .logo-bar-label {
@@ -459,11 +420,10 @@
     .logo-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 32px 48px;
       max-width: 1000px;
       margin: 0 auto;
-      align-items: center;
-      justify-items: center;
+      border: 1px solid var(--color-gray-200);
+      border-radius: 0;
     }
 
     @media (min-width: 640px) {
@@ -486,12 +446,60 @@
       font-size: 1.125rem;
       font-weight: 700;
       color: var(--color-gray-400);
-      opacity: 0.7;
+      padding: 32px 24px;
+      border-right: 1px solid var(--color-gray-200);
+      border-bottom: 1px solid var(--color-gray-200);
       transition: opacity 0.2s;
     }
 
+    /* Remove right border on last item in each row */
+    .customer-logo:nth-child(2n) {
+      border-right: none;
+    }
+
+    @media (min-width: 640px) {
+      .customer-logo:nth-child(2n) {
+        border-right: 1px solid var(--color-gray-200);
+      }
+      .customer-logo:nth-child(3n) {
+        border-right: none;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .customer-logo:nth-child(3n) {
+        border-right: 1px solid var(--color-gray-200);
+      }
+      .customer-logo:nth-child(5n) {
+        border-right: none;
+      }
+    }
+
+    /* Remove bottom border on last row */
+    .logo-grid .customer-logo:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+
+    @media (min-width: 640px) {
+      .logo-grid .customer-logo:nth-last-child(-n+2) {
+        border-bottom: 1px solid var(--color-gray-200);
+      }
+      .logo-grid .customer-logo:nth-last-child(-n+3) {
+        border-bottom: none;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .logo-grid .customer-logo:nth-last-child(-n+3) {
+        border-bottom: 1px solid var(--color-gray-200);
+      }
+      .logo-grid .customer-logo:nth-last-child(-n+5) {
+        border-bottom: none;
+      }
+    }
+
     .customer-logo:hover {
-      opacity: 1;
+      background: var(--color-gray-50);
     }
 
     .customer-logo svg {
@@ -516,16 +524,7 @@
     .section {
       padding: 100px 0;
       position: relative;
-    }
-
-    .section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: var(--color-gray-200);
+      border-top: 1px solid var(--color-gray-200);
     }
 
     .section-alt {
@@ -1003,6 +1002,16 @@
       </div>
     </div>
   </section>
+
+  <!-- Architectural Grid Cells -->
+  <div class="arch-grid">
+    <div class="arch-cell"></div>
+    <div class="arch-cell"></div>
+    <div class="arch-cell"></div>
+    <div class="arch-cell"></div>
+    <div class="arch-cell"></div>
+    <div class="arch-cell"></div>
+  </div>
 
   <!-- Customer Logos -->
   <section class="logo-bar">
